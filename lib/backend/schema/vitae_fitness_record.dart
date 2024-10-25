@@ -66,7 +66,7 @@ class VitaeFitnessRecordDocumentEquality
 
   @override
   bool equals(VitaeFitnessRecord? e1, VitaeFitnessRecord? e2) {
-    return;
+    return true;
   }
 
   @override
