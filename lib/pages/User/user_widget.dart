@@ -1,27 +1,37 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'admin_register_page_model.dart';
-export 'admin_register_page_model.dart';
+import 'package:flutter/scheduler.dart';
 
-class AdminRegisterPageWidget extends StatefulWidget {
-  const AdminRegisterPageWidget({super.key});
+import 'user_model.dart';
+export 'user_model.dart';
+
+class UserWidget extends StatefulWidget {
+  const UserWidget({
+    super.key,
+    String? name,
+  }) : name = name ?? 'Lorenzo';
+
+  final String name;
 
   @override
-  State<AdminRegisterPageWidget> createState() =>
-      _AdminRegisterPageWidgetState();
+  State<UserWidget> createState() => _UserWidgetState();
 }
 
-class _AdminRegisterPageWidgetState extends State<AdminRegisterPageWidget> {
-  late AdminRegisterPageModel _model;
+class _UserWidgetState extends State<UserWidget> {
+  late UserModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => AdminRegisterPageModel());
+    _model = createModel(context, () => UserModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {});
 
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
@@ -53,19 +63,47 @@ class _AdminRegisterPageWidgetState extends State<AdminRegisterPageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
-      child: Scaffold(
-        key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        body: SafeArea(
-          top: true,
-          child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
-            child: Container(
-              width: 472,
-              height: 777,
-              decoration: const BoxDecoration(),
+    return StreamBuilder<List<UserRecord>>(
+      stream: queryUserRecord(
+        queryBuilder: (userRecord) => userRecord.where(
+          'Name',
+          isEqualTo: widget.name,
+        ),
+        singleRecord: true,
+      ),
+      builder: (context, snapshot) {
+        // Customize what your widget looks like when it's loading.
+        if (!snapshot.hasData) {
+          return Scaffold(
+            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            body: Center(
+              child: SizedBox(
+                width: 50,
+                height: 50,
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(
+                    FlutterFlowTheme.of(context).primary,
+                  ),
+                ),
+              ),
+            ),
+          );
+        }
+        List<UserRecord> userUserRecordList = snapshot.data!;
+        // Return an empty Container when the item does not exist.
+        if (snapshot.data!.isEmpty) {
+          return Container();
+        }
+        final userUserRecord =
+            userUserRecordList.isNotEmpty ? userUserRecordList.first : null;
+
+        return GestureDetector(
+          onTap: () => FocusScope.of(context).unfocus(),
+          child: Scaffold(
+            key: scaffoldKey,
+            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            body: SafeArea(
+              top: true,
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -79,7 +117,9 @@ class _AdminRegisterPageWidgetState extends State<AdminRegisterPageWidget> {
                         Align(
                           alignment: const AlignmentDirectional(1, 0),
                           child: FFButtonWidget(
-                            onPressed: () {},
+                            onPressed: () {
+                              print('Button pressed ...');
+                            },
                             text: '',
                             icon: const Icon(
                               Icons.question_mark,
@@ -526,7 +566,7 @@ class _AdminRegisterPageWidgetState extends State<AdminRegisterPageWidget> {
                                     ),
                                   ),
                                   SizedBox(
-                                    width: 200,
+                                    width: 150,
                                     child: TextFormField(
                                       controller: _model.textController6,
                                       focusNode: _model.textFieldFocusNode6,
@@ -631,72 +671,12 @@ class _AdminRegisterPageWidgetState extends State<AdminRegisterPageWidget> {
                       ],
                     ),
                   ),
-                  Align(
-                    alignment: const AlignmentDirectional(0, 1),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        FFButtonWidget(
-                          onPressed: () {},
-                          text: 'Accept',
-                          icon: const Icon(
-                            Icons.check_circle,
-                            size: 26,
-                          ),
-                          options: FFButtonOptions(
-                            height: 40,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                16, 0, 16, 0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                0, 0, 0, 0),
-                            color: FlutterFlowTheme.of(context).primary,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: 'Inter Tight',
-                                  color: const Color(0xFFF9F4F4),
-                                  letterSpacing: 0.0,
-                                ),
-                            elevation: 0,
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                        ),
-                        FFButtonWidget(
-                          onPressed: () {},
-                          text: 'Delete',
-                          icon: const Icon(
-                            Icons.delete_sharp,
-                            size: 26,
-                          ),
-                          options: FFButtonOptions(
-                            height: 40,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                16, 0, 16, 0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                0, 0, 0, 0),
-                            color: const Color(0xFFDF0812),
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: 'Inter Tight',
-                                  color: const Color(0xFFF9F4F4),
-                                  letterSpacing: 0.0,
-                                ),
-                            elevation: 0,
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
                 ],
               ),
             ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }

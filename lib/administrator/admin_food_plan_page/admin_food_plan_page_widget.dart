@@ -1,11 +1,10 @@
+import 'package:working_planning/Firebase_Service/Insert_Data.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'admin_food_plan_page_model.dart';
 export 'admin_food_plan_page_model.dart';
 
@@ -69,27 +68,25 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Align(
-                alignment: AlignmentDirectional(1.0, 0.0),
+                alignment: const AlignmentDirectional(1.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     FFButtonWidget(
-                      onPressed: () {
-                        print('Button pressed ...');
-                      },
+                      onPressed: () {},
                       text: '',
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.person,
                         size: 30.0,
                       ),
                       options: FFButtonOptions(
                         height: 40.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
-                        iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: Color(0x00FFFFFF),
+                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 0.0, 0.0, 0.0),
+                        color: const Color(0x00FFFFFF),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Inter Tight',
@@ -101,24 +98,22 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(1.0, 0.0),
+                      alignment: const AlignmentDirectional(1.0, 0.0),
                       child: FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
-                        },
+                        onPressed: () {},
                         text: '',
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.question_mark,
                           color: Color(0xFF090909),
                           size: 30.0,
                         ),
                         options: FFButtonOptions(
                           height: 43.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: Color(0x00FFFFFF),
+                          color: const Color(0x00FFFFFF),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Inter Tight',
@@ -134,13 +129,13 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
                         child: Image.asset(
@@ -155,30 +150,31 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Expanded(
                       child: Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Container(
                           width: 398.0,
                           height: 458.0,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             shape: BoxShape.rectangle,
                           ),
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment:
+                                      const AlignmentDirectional(0.0, 0.0),
                                   child: Text(
                                     'Food Plan',
                                     style: FlutterFlowTheme.of(context)
@@ -196,7 +192,8 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment:
+                                          const AlignmentDirectional(0.0, 0.0),
                                       child: Text(
                                         'Add Food Plan',
                                         style: FlutterFlowTheme.of(context)
@@ -212,11 +209,14 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                       controller:
                                           _model.dropDownValueController ??=
                                               FormFieldController<String>(null),
-                                      options: [
-                                        'Monday',
+                                      options: const [
+                                        'Sunday'
+                                            'Monday',
                                         'Tuesday',
                                         'Wednesday',
-                                        'Thursday'
+                                        'Thursday',
+                                        'Friday',
+                                        'Saturday'
                                       ],
                                       onChanged: (val) => safeSetState(
                                           () => _model.dropDownValue = val),
@@ -241,8 +241,9 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                       borderColor: Colors.transparent,
                                       borderWidth: 0.0,
                                       borderRadius: 8.0,
-                                      margin: EdgeInsetsDirectional.fromSTEB(
-                                          12.0, 0.0, 12.0, 0.0),
+                                      margin:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              12.0, 0.0, 12.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
                                       isSearchable: false,
@@ -257,9 +258,9 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                   children: [
                                     Expanded(
                                       child: Align(
-                                        alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
-                                        child: Container(
+                                        alignment: const AlignmentDirectional(
+                                            -1.0, 0.0),
+                                        child: SizedBox(
                                           width: 200.0,
                                           child: TextFormField(
                                             controller: _model.textController1,
@@ -285,7 +286,7 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                               enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -293,7 +294,7 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                                     BorderRadius.circular(8.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -342,124 +343,6 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                         ),
                                       ),
                                     ),
-                                    Expanded(
-                                      child: Align(
-                                        alignment:
-                                            AlignmentDirectional(0.0, 0.0),
-                                        child: Container(
-                                          width: 200.0,
-                                          child: TextFormField(
-                                            controller: _model.textController2,
-                                            focusNode:
-                                                _model.textFieldFocusNode2,
-                                            autofocus: false,
-                                            obscureText: false,
-                                            decoration: InputDecoration(
-                                              isDense: true,
-                                              labelStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                              hintText: 'Quantity (g) ',
-                                              hintStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                              enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: Color(0x00000000),
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: Color(0x00000000),
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              errorBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .error,
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              focusedErrorBorder:
-                                                  OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .error,
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              filled: true,
-                                              fillColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                            keyboardType:
-                                                TextInputType.multiline,
-                                            cursorColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryText,
-                                            validator: _model
-                                                .textController2Validator
-                                                .asValidator(context),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    FFButtonWidget(
-                                      onPressed: () {
-                                        print('Button pressed ...');
-                                      },
-                                      text: '',
-                                      icon: Icon(
-                                        Icons.add_circle_outlined,
-                                        size: 26.0,
-                                      ),
-                                      options: FFButtonOptions(
-                                        height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 0.0, 16.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: Color(0x004B39EF),
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Inter Tight',
-                                              color: Color(0xFF151414),
-                                              letterSpacing: 0.0,
-                                            ),
-                                        elevation: 0.0,
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                    ),
                                   ],
                                 ),
                                 Row(
@@ -469,14 +352,14 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                   children: [
                                     Expanded(
                                       child: Align(
-                                        alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
-                                        child: Container(
+                                        alignment: const AlignmentDirectional(
+                                            -1.0, 0.0),
+                                        child: SizedBox(
                                           width: 200.0,
                                           child: TextFormField(
-                                            controller: _model.textController3,
+                                            controller: _model.textController2,
                                             focusNode:
-                                                _model.textFieldFocusNode3,
+                                                _model.textFieldFocusNode2,
                                             autofocus: false,
                                             obscureText: false,
                                             decoration: InputDecoration(
@@ -497,7 +380,7 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                               enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -505,7 +388,7 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                                     BorderRadius.circular(8.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -554,123 +437,6 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                         ),
                                       ),
                                     ),
-                                    Expanded(
-                                      child: Align(
-                                        alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
-                                        child: Container(
-                                          width: 200.0,
-                                          child: TextFormField(
-                                            controller: _model.textController4,
-                                            focusNode:
-                                                _model.textFieldFocusNode4,
-                                            autofocus: false,
-                                            obscureText: false,
-                                            decoration: InputDecoration(
-                                              isDense: true,
-                                              labelStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                              hintText: 'Quantity (g)',
-                                              hintStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                              enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: Color(0x00000000),
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: Color(0x00000000),
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              errorBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .error,
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              focusedErrorBorder:
-                                                  OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .error,
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              filled: true,
-                                              fillColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                            keyboardType: TextInputType.number,
-                                            cursorColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryText,
-                                            validator: _model
-                                                .textController4Validator
-                                                .asValidator(context),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    FFButtonWidget(
-                                      onPressed: () {
-                                        print('Button pressed ...');
-                                      },
-                                      text: '',
-                                      icon: Icon(
-                                        Icons.add_circle_outlined,
-                                        size: 26.0,
-                                      ),
-                                      options: FFButtonOptions(
-                                        height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 0.0, 16.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: Color(0x004B39EF),
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Inter Tight',
-                                              color: Color(0xFF151414),
-                                              letterSpacing: 0.0,
-                                            ),
-                                        elevation: 0.0,
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                    ),
                                   ],
                                 ),
                                 Row(
@@ -680,14 +446,14 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                   children: [
                                     Expanded(
                                       child: Align(
-                                        alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
-                                        child: Container(
+                                        alignment: const AlignmentDirectional(
+                                            -1.0, 0.0),
+                                        child: SizedBox(
                                           width: 200.0,
                                           child: TextFormField(
-                                            controller: _model.textController5,
+                                            controller: _model.textController3,
                                             focusNode:
-                                                _model.textFieldFocusNode5,
+                                                _model.textFieldFocusNode3,
                                             autofocus: false,
                                             obscureText: false,
                                             decoration: InputDecoration(
@@ -708,7 +474,7 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                               enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -716,7 +482,7 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                                     BorderRadius.circular(8.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -765,16 +531,23 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                         ),
                                       ),
                                     ),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
                                     Expanded(
                                       child: Align(
-                                        alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
-                                        child: Container(
+                                        alignment: const AlignmentDirectional(
+                                            -1.0, 0.0),
+                                        child: SizedBox(
                                           width: 200.0,
                                           child: TextFormField(
-                                            controller: _model.textController6,
+                                            controller: _model.textController4,
                                             focusNode:
-                                                _model.textFieldFocusNode6,
+                                                _model.textFieldFocusNode4,
                                             autofocus: false,
                                             obscureText: false,
                                             decoration: InputDecoration(
@@ -786,7 +559,7 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                                         fontFamily: 'Inter',
                                                         letterSpacing: 0.0,
                                                       ),
-                                              hintText: 'Quantity (g)',
+                                              hintText: 'Meal 4',
                                               hintStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
@@ -795,7 +568,7 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                               enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -803,7 +576,7 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                                     BorderRadius.circular(8.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -842,50 +615,115 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                                   fontFamily: 'Inter',
                                                   letterSpacing: 0.0,
                                                 ),
-                                            keyboardType: TextInputType.number,
                                             cursorColor:
                                                 FlutterFlowTheme.of(context)
                                                     .primaryText,
                                             validator: _model
-                                                .textController6Validator
+                                                .textController3Validator
                                                 .asValidator(context),
                                           ),
                                         ),
                                       ),
                                     ),
-                                    FFButtonWidget(
-                                      onPressed: () {
-                                        print('Button pressed ...');
-                                      },
-                                      text: '',
-                                      icon: Icon(
-                                        Icons.add_circle_outlined,
-                                        size: 26.0,
-                                      ),
-                                      options: FFButtonOptions(
-                                        height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 0.0, 16.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: Color(0x004B39EF),
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Inter Tight',
-                                              color: Color(0xFF151414),
-                                              letterSpacing: 0.0,
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Expanded(
+                                      child: Align(
+                                        alignment: const AlignmentDirectional(
+                                            -1.0, 0.0),
+                                        child: SizedBox(
+                                          width: 200.0,
+                                          child: TextFormField(
+                                            controller: _model.textController5,
+                                            focusNode:
+                                                _model.textFieldFocusNode5,
+                                            autofocus: false,
+                                            obscureText: false,
+                                            decoration: InputDecoration(
+                                              isDense: true,
+                                              labelStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              hintText: 'Meal 5',
+                                              hintStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: const BorderSide(
+                                                  color: Color(0x00000000),
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: const BorderSide(
+                                                  color: Color(0x00000000),
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              errorBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              focusedErrorBorder:
+                                                  OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              filled: true,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
                                             ),
-                                        elevation: 0.0,
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                            cursorColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryText,
+                                            validator: _model
+                                                .textController3Validator
+                                                .asValidator(context),
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ],
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 1.0),
+                                  alignment:
+                                      const AlignmentDirectional(0.0, 1.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
@@ -894,28 +732,28 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                     children: [
                                       FFButtonWidget(
                                         onPressed: () {
-                                          print('Button pressed ...');
+                                          context.pushNamed('AdminObjectPage');
                                         },
                                         text: 'Menu',
-                                        icon: Icon(
+                                        icon: const Icon(
                                           Icons.menu,
                                           size: 26.0,
                                         ),
                                         options: FFButtonOptions(
                                           height: 40.0,
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 16.0, 0.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(16.0, 0.0, 16.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: Color(0x00DF0812),
+                                              const EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                          color: const Color(0x00DF0812),
                                           textStyle:
                                               FlutterFlowTheme.of(context)
                                                   .titleSmall
                                                   .override(
                                                     fontFamily: 'Inter Tight',
-                                                    color: Color(0xFF0D0D0D),
+                                                    color:
+                                                        const Color(0xFF0D0D0D),
                                                     letterSpacing: 0.0,
                                                   ),
                                           elevation: 0.0,
@@ -925,21 +763,27 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                       ),
                                       FFButtonWidget(
                                         onPressed: () {
-                                          print('Button pressed ...');
+                                          insertFoodDay(
+                                              _model.dropDownValueController
+                                                  .toString(),
+                                              _model.textController1.text,
+                                              _model.textController2.text,
+                                              _model.textController3.text,
+                                              _model.textController4.text,
+                                              _model.textController5.text);
                                         },
                                         text: 'Accept',
-                                        icon: Icon(
+                                        icon: const Icon(
                                           Icons.check_circle,
                                           size: 26.0,
                                         ),
                                         options: FFButtonOptions(
                                           height: 40.0,
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 16.0, 0.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(16.0, 0.0, 16.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
+                                              const EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
                                           textStyle:
@@ -947,38 +791,8 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                                   .titleSmall
                                                   .override(
                                                     fontFamily: 'Inter Tight',
-                                                    color: Color(0xFFF9F4F4),
-                                                    letterSpacing: 0.0,
-                                                  ),
-                                          elevation: 0.0,
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                      ),
-                                      FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
-                                        },
-                                        text: 'Delete',
-                                        icon: Icon(
-                                          Icons.delete_sharp,
-                                          size: 26.0,
-                                        ),
-                                        options: FFButtonOptions(
-                                          height: 40.0,
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 16.0, 0.0),
-                                          iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: Color(0xFFDF0812),
-                                          textStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .override(
-                                                    fontFamily: 'Inter Tight',
-                                                    color: Color(0xFFF9F4F4),
+                                                    color:
+                                                        const Color(0xFFF9F4F4),
                                                     letterSpacing: 0.0,
                                                   ),
                                           elevation: 0.0,

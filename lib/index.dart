@@ -2,7 +2,6 @@
 export '/pages/login_page/login_page_widget.dart' show LoginPageWidget;
 export '/pages/home_page/home_page_widget.dart' show HomePageWidget;
 export '/pages/object_page/object_page_widget.dart' show ObjectPageWidget;
-export '/pages/register_page/register_page_widget.dart' show RegisterPageWidget;
 export '/pages/object_page_c/object_page_c_widget.dart' show ObjectPageCWidget;
 export '/pages/food_plan_page/food_plan_page_widget.dart'
     show FoodPlanPageWidget;

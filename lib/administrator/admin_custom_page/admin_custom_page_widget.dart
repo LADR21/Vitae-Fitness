@@ -4,8 +4,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'admin_custom_page_model.dart';
 export 'admin_custom_page_model.dart';
 
@@ -53,27 +51,25 @@ class _AdminCustomPageWidgetState extends State<AdminCustomPageWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Align(
-                alignment: AlignmentDirectional(1.0, 0.0),
+                alignment: const AlignmentDirectional(1.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     FFButtonWidget(
-                      onPressed: () {
-                        print('Button pressed ...');
-                      },
+                      onPressed: () {},
                       text: '',
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.person,
                         size: 30.0,
                       ),
                       options: FFButtonOptions(
                         height: 40.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
-                        iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: Color(0x00FFFFFF),
+                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 0.0, 0.0, 0.0),
+                        color: const Color(0x00FFFFFF),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Inter Tight',
@@ -85,24 +81,22 @@ class _AdminCustomPageWidgetState extends State<AdminCustomPageWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(1.0, 0.0),
+                      alignment: const AlignmentDirectional(1.0, 0.0),
                       child: FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
-                        },
+                        onPressed: () {},
                         text: '',
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.question_mark,
                           color: Color(0xFF090909),
                           size: 30.0,
                         ),
                         options: FFButtonOptions(
                           height: 43.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: Color(0x00FFFFFF),
+                          color: const Color(0x00FFFFFF),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Inter Tight',
@@ -118,13 +112,13 @@ class _AdminCustomPageWidgetState extends State<AdminCustomPageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
                         child: Image.asset(
@@ -140,23 +134,23 @@ class _AdminCustomPageWidgetState extends State<AdminCustomPageWidget> {
               ),
               Expanded(
                 child: Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Container(
                     width: 398.0,
                     height: 546.0,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       shape: BoxShape.rectangle,
                     ),
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Text(
                               'Customized',
                               style: FlutterFlowTheme.of(context)
@@ -168,7 +162,7 @@ class _AdminCustomPageWidgetState extends State<AdminCustomPageWidget> {
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(-1.0, 0.0),
+                            alignment: const AlignmentDirectional(-1.0, 0.0),
                             child: Text(
                               'User',
                               textAlign: TextAlign.start,
@@ -184,7 +178,7 @@ class _AdminCustomPageWidgetState extends State<AdminCustomPageWidget> {
                           FlutterFlowDropDown<String>(
                             controller: _model.dropDownValueController ??=
                                 FormFieldController<String>(null),
-                            options: ['Option 1', 'Option 2', 'Option 3'],
+                            options: const ['Option 1', 'Option 2', 'Option 3'],
                             onChanged: (val) =>
                                 safeSetState(() => _model.dropDownValue = val),
                             width: 392.0,
@@ -208,7 +202,7 @@ class _AdminCustomPageWidgetState extends State<AdminCustomPageWidget> {
                             borderColor: Colors.transparent,
                             borderWidth: 0.0,
                             borderRadius: 8.0,
-                            margin: EdgeInsetsDirectional.fromSTEB(
+                            margin: const EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 12.0, 0.0),
                             hidesUnderline: true,
                             isOverButton: false,
@@ -234,7 +228,8 @@ class _AdminCustomPageWidgetState extends State<AdminCustomPageWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment:
+                                        const AlignmentDirectional(-1.0, 0.0),
                                     child: Text(
                                       'Monthly Payment',
                                       textAlign: TextAlign.start,
@@ -248,8 +243,9 @@ class _AdminCustomPageWidgetState extends State<AdminCustomPageWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
-                                    child: Container(
+                                    alignment:
+                                        const AlignmentDirectional(0.0, 0.0),
+                                    child: SizedBox(
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.textController,
@@ -274,7 +270,7 @@ class _AdminCustomPageWidgetState extends State<AdminCustomPageWidget> {
                                                     letterSpacing: 0.0,
                                                   ),
                                           enabledBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
+                                            borderSide: const BorderSide(
                                               color: Color(0x00000000),
                                               width: 1.0,
                                             ),
@@ -282,7 +278,7 @@ class _AdminCustomPageWidgetState extends State<AdminCustomPageWidget> {
                                                 BorderRadius.circular(8.0),
                                           ),
                                           focusedBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
+                                            borderSide: const BorderSide(
                                               color: Color(0x00000000),
                                               width: 1.0,
                                             ),
@@ -341,25 +337,26 @@ class _AdminCustomPageWidgetState extends State<AdminCustomPageWidget> {
                             children: [
                               FFButtonWidget(
                                 onPressed: () {
-                                  print('Button pressed ...');
+                                  context.pushNamed('AdminFoodPlanPage');
                                 },
                                 text: 'Add Food Plan',
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.add_circle,
                                   size: 20.0,
                                 ),
                                 options: FFButtonOptions(
                                   height: 40.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: Color(0x004B39EF),
+                                  iconPadding:
+                                      const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
+                                  color: const Color(0x004B39EF),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
                                         fontFamily: 'Inter Tight',
-                                        color: Color(0xFF0B0B0B),
+                                        color: const Color(0xFF0B0B0B),
                                         fontSize: 20.0,
                                         letterSpacing: 0.0,
                                       ),
@@ -369,25 +366,26 @@ class _AdminCustomPageWidgetState extends State<AdminCustomPageWidget> {
                               ),
                               FFButtonWidget(
                                 onPressed: () {
-                                  print('Button pressed ...');
+                                  context.pushNamed('AdminRoutinesPage');
                                 },
                                 text: 'Add Routines ',
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.add_circle,
                                   size: 20.0,
                                 ),
                                 options: FFButtonOptions(
                                   height: 40.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: Color(0x004B39EF),
+                                  iconPadding:
+                                      const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
+                                  color: const Color(0x004B39EF),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
                                         fontFamily: 'Inter Tight',
-                                        color: Color(0xFF0B0B0B),
+                                        color: const Color(0xFF0B0B0B),
                                         fontSize: 20.0,
                                         letterSpacing: 0.0,
                                       ),
@@ -402,26 +400,25 @@ class _AdminCustomPageWidgetState extends State<AdminCustomPageWidget> {
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               FFButtonWidget(
-                                onPressed: () {
-                                  print('Button pressed ...');
-                                },
+                                onPressed: () {},
                                 text: 'Accept',
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.check_circle,
                                   size: 20.0,
                                 ),
                                 options: FFButtonOptions(
                                   height: 40.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: Color(0x004B39EF),
+                                  iconPadding:
+                                      const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
+                                  color: const Color(0x004B39EF),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
                                         fontFamily: 'Inter Tight',
-                                        color: Color(0xFF0B0B0B),
+                                        color: const Color(0xFF0B0B0B),
                                         fontSize: 20.0,
                                         letterSpacing: 0.0,
                                       ),
@@ -431,25 +428,26 @@ class _AdminCustomPageWidgetState extends State<AdminCustomPageWidget> {
                               ),
                               FFButtonWidget(
                                 onPressed: () {
-                                  print('Button pressed ...');
+                                  context.pushNamed('AdminObjectPage');
                                 },
                                 text: 'Menu',
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.menu,
                                   size: 20.0,
                                 ),
                                 options: FFButtonOptions(
                                   height: 40.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: Color(0x004B39EF),
+                                  iconPadding:
+                                      const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
+                                  color: const Color(0x004B39EF),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
                                         fontFamily: 'Inter Tight',
-                                        color: Color(0xFF0B0B0B),
+                                        color: const Color(0xFF0B0B0B),
                                         fontSize: 20.0,
                                         letterSpacing: 0.0,
                                       ),
@@ -459,25 +457,26 @@ class _AdminCustomPageWidgetState extends State<AdminCustomPageWidget> {
                               ),
                               FFButtonWidget(
                                 onPressed: () {
-                                  print('Button pressed ...');
+                                  context.pushNamed('AdminRegisterPage');
                                 },
                                 text: 'New User',
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.person_add,
                                   size: 20.0,
                                 ),
                                 options: FFButtonOptions(
                                   height: 40.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: Color(0x004B39EF),
+                                  iconPadding:
+                                      const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
+                                  color: const Color(0x004B39EF),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
                                         fontFamily: 'Inter Tight',
-                                        color: Color(0xFF0B0B0B),
+                                        color: const Color(0xFF0B0B0B),
                                         fontSize: 20.0,
                                         letterSpacing: 0.0,
                                       ),

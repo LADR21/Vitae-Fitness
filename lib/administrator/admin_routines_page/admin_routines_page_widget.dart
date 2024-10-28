@@ -5,8 +5,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'admin_routines_page_model.dart';
 export 'admin_routines_page_model.dart';
 
@@ -61,27 +59,25 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Align(
-                alignment: AlignmentDirectional(1.0, 0.0),
+                alignment: const AlignmentDirectional(1.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     FFButtonWidget(
-                      onPressed: () {
-                        print('Button pressed ...');
-                      },
+                      onPressed: () {},
                       text: '',
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.person,
                         size: 30.0,
                       ),
                       options: FFButtonOptions(
                         height: 40.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
-                        iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: Color(0x00FFFFFF),
+                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 0.0, 0.0, 0.0),
+                        color: const Color(0x00FFFFFF),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Inter Tight',
@@ -93,24 +89,22 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(1.0, 0.0),
+                      alignment: const AlignmentDirectional(1.0, 0.0),
                       child: FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
-                        },
+                        onPressed: () {},
                         text: '',
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.question_mark,
                           color: Color(0xFF090909),
                           size: 30.0,
                         ),
                         options: FFButtonOptions(
                           height: 43.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: Color(0x00FFFFFF),
+                          color: const Color(0x00FFFFFF),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Inter Tight',
@@ -126,13 +120,13 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
                         child: Image.asset(
@@ -147,30 +141,31 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Expanded(
                       child: Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Container(
                           width: 398.0,
                           height: 458.0,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             shape: BoxShape.rectangle,
                           ),
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment:
+                                      const AlignmentDirectional(0.0, 0.0),
                                   child: Text(
                                     'Routines',
                                     style: FlutterFlowTheme.of(context)
@@ -188,7 +183,8 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment:
+                                          const AlignmentDirectional(0.0, 0.0),
                                       child: Text(
                                         'Add routines',
                                         style: FlutterFlowTheme.of(context)
@@ -204,11 +200,14 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
                                       controller:
                                           _model.dropDownValueController ??=
                                               FormFieldController<String>(null),
-                                      options: [
-                                        'Monday',
+                                      options: const [
+                                        'Sunday'
+                                            'Monday',
                                         'Tuesday',
                                         'Wednesday',
-                                        'Thursday'
+                                        'Thursday',
+                                        'Friday',
+                                        'Saturday'
                                       ],
                                       onChanged: (val) => safeSetState(
                                           () => _model.dropDownValue = val),
@@ -233,8 +232,9 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
                                       borderColor: Colors.transparent,
                                       borderWidth: 0.0,
                                       borderRadius: 8.0,
-                                      margin: EdgeInsetsDirectional.fromSTEB(
-                                          12.0, 0.0, 12.0, 0.0),
+                                      margin:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              12.0, 0.0, 12.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
                                       isSearchable: false,
@@ -248,7 +248,7 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
                                     Expanded(
-                                      child: Container(
+                                      child: SizedBox(
                                         width: 200.0,
                                         child: TextFormField(
                                           controller: _model.textController1,
@@ -273,7 +273,7 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
@@ -281,7 +281,7 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
                                                   BorderRadius.circular(8.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
@@ -330,27 +330,24 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
                                       ),
                                     ),
                                     FFButtonWidget(
-                                      onPressed: () {
-                                        print('Button pressed ...');
-                                      },
+                                      onPressed: () {},
                                       text: '',
-                                      icon: Icon(
+                                      icon: const Icon(
                                         Icons.add_circle_outlined,
                                         size: 26.0,
                                       ),
                                       options: FFButtonOptions(
                                         height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 0.0, 16.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: Color(0x004B39EF),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                        iconPadding: const EdgeInsetsDirectional
+                                            .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                        color: const Color(0x004B39EF),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
                                               fontFamily: 'Inter Tight',
-                                              color: Color(0xFF151414),
+                                              color: const Color(0xFF151414),
                                               letterSpacing: 0.0,
                                             ),
                                         elevation: 0.0,
@@ -366,7 +363,7 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
                                     Expanded(
-                                      child: Container(
+                                      child: SizedBox(
                                         width: 200.0,
                                         child: TextFormField(
                                           controller: _model.textController2,
@@ -391,7 +388,7 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
@@ -399,7 +396,7 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
                                                   BorderRadius.circular(8.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
@@ -448,27 +445,24 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
                                       ),
                                     ),
                                     FFButtonWidget(
-                                      onPressed: () {
-                                        print('Button pressed ...');
-                                      },
+                                      onPressed: () {},
                                       text: '',
-                                      icon: Icon(
+                                      icon: const Icon(
                                         Icons.add_circle_outlined,
                                         size: 26.0,
                                       ),
                                       options: FFButtonOptions(
                                         height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 0.0, 16.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: Color(0x004B39EF),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                        iconPadding: const EdgeInsetsDirectional
+                                            .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                        color: const Color(0x004B39EF),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
                                               fontFamily: 'Inter Tight',
-                                              color: Color(0xFF151414),
+                                              color: const Color(0xFF151414),
                                               letterSpacing: 0.0,
                                             ),
                                         elevation: 0.0,
@@ -484,7 +478,7 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
                                     Expanded(
-                                      child: Container(
+                                      child: SizedBox(
                                         width: 200.0,
                                         child: TextFormField(
                                           controller: _model.textController3,
@@ -509,7 +503,7 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
@@ -517,7 +511,7 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
                                                   BorderRadius.circular(8.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
@@ -566,27 +560,24 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
                                       ),
                                     ),
                                     FFButtonWidget(
-                                      onPressed: () {
-                                        print('Button pressed ...');
-                                      },
+                                      onPressed: () {},
                                       text: '',
-                                      icon: Icon(
+                                      icon: const Icon(
                                         Icons.add_circle_outlined,
                                         size: 26.0,
                                       ),
                                       options: FFButtonOptions(
                                         height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 0.0, 16.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: Color(0x004B39EF),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                        iconPadding: const EdgeInsetsDirectional
+                                            .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                        color: const Color(0x004B39EF),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
                                               fontFamily: 'Inter Tight',
-                                              color: Color(0xFF151414),
+                                              color: const Color(0xFF151414),
                                               letterSpacing: 0.0,
                                             ),
                                         elevation: 0.0,
@@ -609,27 +600,24 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
                                       ),
                                     ),
                                     FFButtonWidget(
-                                      onPressed: () {
-                                        print('Button pressed ...');
-                                      },
+                                      onPressed: () {},
                                       text: '',
-                                      icon: Icon(
+                                      icon: const Icon(
                                         Icons.add_circle_outlined,
                                         size: 26.0,
                                       ),
                                       options: FFButtonOptions(
                                         height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 0.0, 16.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: Color(0x004B39EF),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                        iconPadding: const EdgeInsetsDirectional
+                                            .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                        color: const Color(0x004B39EF),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
                                               fontFamily: 'Inter Tight',
-                                              color: Color(0xFF151414),
+                                              color: const Color(0xFF151414),
                                               letterSpacing: 0.0,
                                             ),
                                         elevation: 0.0,
@@ -641,93 +629,90 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         FFButtonWidget(
-                                          onPressed: () {
-                                            print('Button pressed ...');
-                                          },
+                                          onPressed: () {},
                                           text: 'Accept',
-                                          icon: Icon(
+                                          icon: const Icon(
                                             Icons.check_circle,
                                             size: 20.0,
                                           ),
                                           options: FFButtonOptions(
                                             height: 52.0,
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 0.0, 16.0, 0.0),
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(16.0, 0.0, 16.0, 0.0),
                                             iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional
+                                                    .fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
-                                            color: Color(0x004B39EF),
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily: 'Inter Tight',
-                                                      color: Color(0xFF101010),
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            color: const Color(0x004B39EF),
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  fontFamily: 'Inter Tight',
+                                                  color:
+                                                      const Color(0xFF101010),
+                                                  letterSpacing: 0.0,
+                                                ),
                                             elevation: 0.0,
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                           ),
                                         ),
                                         FFButtonWidget(
-                                          onPressed: () {
-                                            print('Button pressed ...');
-                                          },
+                                          onPressed: () {},
                                           text: 'Delete',
-                                          icon: Icon(
+                                          icon: const Icon(
                                             Icons.delete,
                                             size: 20.0,
                                           ),
                                           options: FFButtonOptions(
                                             height: 52.0,
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 0.0, 16.0, 0.0),
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(16.0, 0.0, 16.0, 0.0),
                                             iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional
+                                                    .fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
-                                            color: Color(0x004B39EF),
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily: 'Inter Tight',
-                                                      color: Color(0xFF101010),
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            color: const Color(0x004B39EF),
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  fontFamily: 'Inter Tight',
+                                                  color:
+                                                      const Color(0xFF101010),
+                                                  letterSpacing: 0.0,
+                                                ),
                                             elevation: 0.0,
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                           ),
                                         ),
                                         FFButtonWidget(
-                                          onPressed: () {
-                                            print('Button pressed ...');
-                                          },
+                                          onPressed: () {},
                                           text: 'Menu',
-                                          icon: Icon(
+                                          icon: const Icon(
                                             Icons.menu,
                                             size: 20.0,
                                           ),
                                           options: FFButtonOptions(
                                             height: 52.0,
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 0.0, 16.0, 0.0),
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(16.0, 0.0, 16.0, 0.0),
                                             iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional
+                                                    .fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
-                                            color: Color(0x004B39EF),
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily: 'Inter Tight',
-                                                      color: Color(0xFF101010),
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            color: const Color(0x004B39EF),
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  fontFamily: 'Inter Tight',
+                                                  color:
+                                                      const Color(0xFF101010),
+                                                  letterSpacing: 0.0,
+                                                ),
                                             elevation: 0.0,
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
@@ -750,25 +735,23 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   FFButtonWidget(
-                    onPressed: () {
-                      print('Button pressed ...');
-                    },
+                    onPressed: () {},
                     text: '',
-                    icon: FaIcon(
+                    icon: const FaIcon(
                       FontAwesomeIcons.stepBackward,
                       size: 20.0,
                     ),
                     options: FFButtonOptions(
                       height: 40.0,
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                      iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: Color(0x004B39EF),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          16.0, 0.0, 16.0, 0.0),
+                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 0.0, 0.0, 0.0),
+                      color: const Color(0x004B39EF),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Inter Tight',
-                                color: Color(0xFF0B0B0B),
+                                color: const Color(0xFF0B0B0B),
                                 letterSpacing: 0.0,
                               ),
                       elevation: 0.0,
@@ -776,25 +759,23 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
                     ),
                   ),
                   FFButtonWidget(
-                    onPressed: () {
-                      print('Button pressed ...');
-                    },
+                    onPressed: () {},
                     text: '',
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.play_circle,
                       size: 30.0,
                     ),
                     options: FFButtonOptions(
                       height: 40.0,
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                      iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: Color(0x004B39EF),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          16.0, 0.0, 16.0, 0.0),
+                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 0.0, 0.0, 0.0),
+                      color: const Color(0x004B39EF),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Inter Tight',
-                                color: Color(0xFF0B0B0B),
+                                color: const Color(0xFF0B0B0B),
                                 letterSpacing: 0.0,
                               ),
                       elevation: 0.0,
@@ -803,25 +784,23 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
                   ),
                   Flexible(
                     child: FFButtonWidget(
-                      onPressed: () {
-                        print('Button pressed ...');
-                      },
+                      onPressed: () {},
                       text: '',
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.skip_next_rounded,
                         size: 40.0,
                       ),
                       options: FFButtonOptions(
                         height: 40.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
-                        iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: Color(0x004B39EF),
+                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 0.0, 0.0, 0.0),
+                        color: const Color(0x004B39EF),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Inter Tight',
-                                  color: Color(0xFF0B0B0B),
+                                  color: const Color(0xFF0B0B0B),
                                   letterSpacing: 0.0,
                                 ),
                         elevation: 0.0,
@@ -830,21 +809,19 @@ class _AdminRoutinesPageWidgetState extends State<AdminRoutinesPageWidget> {
                     ),
                   ),
                   FFButtonWidget(
-                    onPressed: () {
-                      print('Button pressed ...');
-                    },
+                    onPressed: () {},
                     text: 'Add sample videos',
                     options: FFButtonOptions(
                       height: 52.0,
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                      iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: Color(0x004B39EF),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          16.0, 0.0, 16.0, 0.0),
+                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 0.0, 0.0, 0.0),
+                      color: const Color(0x004B39EF),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Inter Tight',
-                                color: Color(0xFF1304FF),
+                                color: const Color(0xFF1304FF),
                                 letterSpacing: 0.0,
                                 decoration: TextDecoration.underline,
                               ),

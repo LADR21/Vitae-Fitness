@@ -1,11 +1,9 @@
-import '/flutter_flow/flutter_flow_data_table.dart';
+// ignore_for_file: sized_box_for_whitespace
+
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:provider/provider.dart';
 import 'food_plan_page_model.dart';
 export 'food_plan_page_model.dart';
 
@@ -56,27 +54,25 @@ class _FoodPlanPageWidgetState extends State<FoodPlanPageWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Align(
-                    alignment: AlignmentDirectional(1.0, 0.0),
+                    alignment: const AlignmentDirectional(1.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
-                          },
+                          onPressed: () {},
                           text: '',
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.person,
                             size: 30.0,
                           ),
                           options: FFButtonOptions(
                             height: 40.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: Color(0x00FFFFFF),
+                            color: const Color(0x00FFFFFF),
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -89,24 +85,22 @@ class _FoodPlanPageWidgetState extends State<FoodPlanPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(1.0, 0.0),
+                          alignment: const AlignmentDirectional(1.0, 0.0),
                           child: FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
-                            },
+                            onPressed: () {},
                             text: '',
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.question_mark,
                               color: Color(0xFF090909),
                               size: 30.0,
                             ),
                             options: FFButtonOptions(
                               height: 43.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              color: Color(0x00FFFFFF),
+                              color: const Color(0x00FFFFFF),
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
@@ -123,13 +117,13 @@ class _FoodPlanPageWidgetState extends State<FoodPlanPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
                             child: Image.asset(
@@ -144,20 +138,20 @@ class _FoodPlanPageWidgetState extends State<FoodPlanPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Container(
                             width: 398.0,
                             height: 476.0,
-                            decoration: BoxDecoration(),
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            decoration: const BoxDecoration(),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
@@ -165,7 +159,8 @@ class _FoodPlanPageWidgetState extends State<FoodPlanPageWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment:
+                                        const AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       'Food Plan',
                                       style: FlutterFlowTheme.of(context)
@@ -181,8 +176,8 @@ class _FoodPlanPageWidgetState extends State<FoodPlanPageWidget> {
                                     children: [
                                       Expanded(
                                         child: Align(
-                                          alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                          alignment: const AlignmentDirectional(
+                                              0.0, 0.0),
                                           child: Container(
                                             width: 200.0,
                                             child: TextFormField(
@@ -210,7 +205,7 @@ class _FoodPlanPageWidgetState extends State<FoodPlanPageWidget> {
                                                         ),
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 1.0,
                                                   ),
@@ -220,7 +215,7 @@ class _FoodPlanPageWidgetState extends State<FoodPlanPageWidget> {
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 1.0,
                                                   ),
@@ -279,29 +274,27 @@ class _FoodPlanPageWidgetState extends State<FoodPlanPageWidget> {
                                         ),
                                       ),
                                       FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
-                                        },
+                                        onPressed: () {},
                                         text: '',
-                                        icon: Icon(
+                                        icon: const Icon(
                                           Icons.calendar_month,
                                           size: 30.0,
                                         ),
                                         options: FFButtonOptions(
                                           height: 40.0,
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 16.0, 0.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(16.0, 0.0, 16.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: Color(0x004B39EF),
+                                              const EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                          color: const Color(0x004B39EF),
                                           textStyle:
                                               FlutterFlowTheme.of(context)
                                                   .titleSmall
                                                   .override(
                                                     fontFamily: 'Inter Tight',
-                                                    color: Color(0xFF0B0B0B),
+                                                    color:
+                                                        const Color(0xFF0B0B0B),
                                                     letterSpacing: 0.0,
                                                   ),
                                           elevation: 0.0,
@@ -310,138 +303,6 @@ class _FoodPlanPageWidgetState extends State<FoodPlanPageWidget> {
                                         ),
                                       ),
                                     ],
-                                  ),
-                                  Expanded(
-                                    child: FlutterFlowDataTable<dynamic>(
-                                      controller:
-                                          _model.paginatedDataTableController,
-                                      data: paginatedDataTableRecordList,
-                                      columnsBuilder: (onSortChanged) => [
-                                        DataColumn2(
-                                          label: DefaultTextStyle.merge(
-                                            softWrap: true,
-                                            child: Text(
-                                              'DAY',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          ),
-                                        ),
-                                        DataColumn2(
-                                          label: DefaultTextStyle.merge(
-                                            softWrap: true,
-                                            child: Text(
-                                              'Monday',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          ),
-                                        ),
-                                        DataColumn2(
-                                          label: DefaultTextStyle.merge(
-                                            softWrap: true,
-                                            child: Text(
-                                              'Tuesday',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          ),
-                                        ),
-                                        DataColumn2(
-                                          label: DefaultTextStyle.merge(
-                                            softWrap: true,
-                                            child: Text(
-                                              'Wednesday',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        fontSize: 15.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                      dataRowBuilder: (Item,
-                                              paginatedDataTableIndex,
-                                              selected,
-                                              onSelectChanged) =>
-                                          DataRow(
-                                        color: MaterialStateProperty.all(
-                                          paginatedDataTableIndex % 2 == 0
-                                              ? FlutterFlowTheme.of(context)
-                                                  .secondaryBackground
-                                              : FlutterFlowTheme.of(context)
-                                                  .primaryBackground,
-                                        ),
-                                        cells: [
-                                          Text(
-                                            'Meal',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                          Text(
-                                            'Food',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                          Text(
-                                            'Food',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                          Text(
-                                            'Food',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ].map((c) => DataCell(c)).toList(),
-                                      ),
-                                      paginated: false,
-                                      selectable: false,
-                                      headingRowHeight: 70.0,
-                                      dataRowHeight: 80.0,
-                                      columnSpacing: 5.0,
-                                      borderRadius: BorderRadius.circular(8.0),
-                                      addHorizontalDivider: true,
-                                      addTopAndBottomDivider: false,
-                                      hideDefaultHorizontalDivider: true,
-                                      horizontalDividerThickness: 1.0,
-                                      addVerticalDivider: false,
-                                    ),
                                   ),
                                 ],
                               ),
@@ -457,24 +318,24 @@ class _FoodPlanPageWidgetState extends State<FoodPlanPageWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () {
-                          print('Button pressed ...');
+                          context.pushNamed('ObjectPage');
                         },
                         text: 'Menu',
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.menu,
                           size: 26.0,
                         ),
                         options: FFButtonOptions(
                           height: 40.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: Color(0x004B39EF),
+                          color: const Color(0x004B39EF),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Inter Tight',
-                                    color: Color(0xFF0F0F0F),
+                                    color: const Color(0xFF0F0F0F),
                                     fontSize: 20.0,
                                     letterSpacing: 0.0,
                                   ),
@@ -484,24 +345,24 @@ class _FoodPlanPageWidgetState extends State<FoodPlanPageWidget> {
                       ),
                       FFButtonWidget(
                         onPressed: () {
-                          print('Button pressed ...');
+                          context.pushNamed('WorkOutPage');
                         },
                         text: 'WorkOut',
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.directions_run_sharp,
                           size: 26.0,
                         ),
                         options: FFButtonOptions(
                           height: 40.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: Color(0x004B39EF),
+                          color: const Color(0x004B39EF),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Inter Tight',
-                                    color: Color(0xFF0F0F0F),
+                                    color: const Color(0xFF0F0F0F),
                                     fontSize: 20.0,
                                     letterSpacing: 0.0,
                                   ),

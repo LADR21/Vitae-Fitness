@@ -2,13 +2,15 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'object_page_c_model.dart';
 export 'object_page_c_model.dart';
 
 class ObjectPageCWidget extends StatefulWidget {
-  const ObjectPageCWidget({super.key});
+  const ObjectPageCWidget({
+    super.key,
+    String? name,
+  }) : name = name ?? 'Lorenzo';
+  final String? name;
 
   @override
   State<ObjectPageCWidget> createState() => _ObjectPageCWidgetState();
@@ -51,27 +53,25 @@ class _ObjectPageCWidgetState extends State<ObjectPageCWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Align(
-                    alignment: AlignmentDirectional(1.0, 0.0),
+                    alignment: const AlignmentDirectional(1.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
-                          },
+                          onPressed: () {},
                           text: '',
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.person,
                             size: 30.0,
                           ),
                           options: FFButtonOptions(
                             height: 40.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: Color(0x00FFFFFF),
+                            color: const Color(0x00FFFFFF),
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -84,24 +84,22 @@ class _ObjectPageCWidgetState extends State<ObjectPageCWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(1.0, 0.0),
+                          alignment: const AlignmentDirectional(1.0, 0.0),
                           child: FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
-                            },
+                            onPressed: () {},
                             text: '',
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.question_mark,
                               color: Color(0xFF090909),
                               size: 30.0,
                             ),
                             options: FFButtonOptions(
                               height: 43.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              color: Color(0x00FFFFFF),
+                              color: const Color(0x00FFFFFF),
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
@@ -118,13 +116,13 @@ class _ObjectPageCWidgetState extends State<ObjectPageCWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
                             child: Image.asset(
@@ -139,20 +137,20 @@ class _ObjectPageCWidgetState extends State<ObjectPageCWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Container(
                             width: 398.0,
                             height: 471.0,
-                            decoration: BoxDecoration(),
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            decoration: const BoxDecoration(),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
@@ -160,15 +158,20 @@ class _ObjectPageCWidgetState extends State<ObjectPageCWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
-                                    child: Text(
-                                      'Fat Burn',
-                                      style: FlutterFlowTheme.of(context)
-                                          .displaySmall
-                                          .override(
-                                            fontFamily: 'Inter Tight',
-                                            letterSpacing: 0.0,
-                                          ),
+                                    alignment: const AlignmentDirectional(0, 0),
+                                    child: Padding(
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0, 0, 51, 0),
+                                      child: Text(
+                                        widget.name.toString(),
+                                        style: FlutterFlowTheme.of(context)
+                                            .displaySmall
+                                            .override(
+                                              fontFamily: 'Inter Tight',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
                                     ),
                                   ),
                                   Row(
@@ -189,15 +192,43 @@ class _ObjectPageCWidgetState extends State<ObjectPageCWidget> {
                                               fit: BoxFit.cover,
                                             ),
                                           ),
-                                          Text(
-                                            'Food Plan',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  fontSize: 18.0,
-                                                  letterSpacing: 0.0,
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              FFButtonWidget(
+                                                onPressed: () {
+                                                  context.pushNamed(
+                                                      'FoodPlanPage');
+                                                },
+                                                text: 'Food Plan',
+                                                options: FFButtonOptions(
+                                                  height: 40,
+                                                  padding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(
+                                                          16, 0, 16, 0),
+                                                  iconPadding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(0, 0, 0, 0),
+                                                  color:
+                                                      const Color(0x004B39EF),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Inter Tight',
+                                                            color: const Color(
+                                                                0xFF151313),
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                  elevation: 0,
+                                                  borderRadius:
+                                                      BorderRadius.circular(8),
                                                 ),
+                                              ),
+                                            ],
                                           ),
                                         ],
                                       ),
@@ -217,16 +248,38 @@ class _ObjectPageCWidgetState extends State<ObjectPageCWidget> {
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
-                                              Text(
-                                                'Work out',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          fontSize: 18.0,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                              FFButtonWidget(
+                                                onPressed: () {
+                                                  context
+                                                      .pushNamed('WorkOutPage');
+                                                },
+                                                text: 'Work out',
+                                                options: FFButtonOptions(
+                                                  height: 40,
+                                                  padding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(
+                                                          16, 0, 16, 0),
+                                                  iconPadding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(0, 0, 0, 0),
+                                                  color:
+                                                      const Color(0x004B39EF),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Inter Tight',
+                                                            color: const Color(
+                                                                0xFF151313),
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                  elevation: 0,
+                                                  borderRadius:
+                                                      BorderRadius.circular(8),
+                                                ),
                                               ),
                                             ],
                                           ),
@@ -248,24 +301,24 @@ class _ObjectPageCWidgetState extends State<ObjectPageCWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () {
-                          print('Button pressed ...');
+                          context.pushNamed('ObjectPage');
                         },
                         text: 'Menu',
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.menu,
                           size: 26.0,
                         ),
                         options: FFButtonOptions(
                           height: 40.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: Color(0x004B39EF),
+                          color: const Color(0x004B39EF),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Inter Tight',
-                                    color: Color(0xFF0F0F0F),
+                                    color: const Color(0xFF0F0F0F),
                                     fontSize: 20.0,
                                     letterSpacing: 0.0,
                                   ),

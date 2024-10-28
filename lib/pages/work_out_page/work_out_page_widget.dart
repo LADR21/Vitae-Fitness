@@ -1,11 +1,9 @@
+// ignore_for_file: sized_box_for_whitespace
+
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:provider/provider.dart';
 import 'work_out_page_model.dart';
 export 'work_out_page_model.dart';
 
@@ -56,27 +54,25 @@ class _WorkOutPageWidgetState extends State<WorkOutPageWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Align(
-                    alignment: AlignmentDirectional(1.0, 0.0),
+                    alignment: const AlignmentDirectional(1.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
-                          },
+                          onPressed: () {},
                           text: '',
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.person,
                             size: 30.0,
                           ),
                           options: FFButtonOptions(
                             height: 40.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: Color(0x00FFFFFF),
+                            color: const Color(0x00FFFFFF),
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -89,24 +85,22 @@ class _WorkOutPageWidgetState extends State<WorkOutPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(1.0, 0.0),
+                          alignment: const AlignmentDirectional(1.0, 0.0),
                           child: FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
-                            },
+                            onPressed: () {},
                             text: '',
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.question_mark,
                               color: Color(0xFF090909),
                               size: 30.0,
                             ),
                             options: FFButtonOptions(
                               height: 43.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              color: Color(0x00FFFFFF),
+                              color: const Color(0x00FFFFFF),
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
@@ -123,13 +117,13 @@ class _WorkOutPageWidgetState extends State<WorkOutPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
                             child: Image.asset(
@@ -144,20 +138,20 @@ class _WorkOutPageWidgetState extends State<WorkOutPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Container(
                             width: 398.0,
                             height: 476.0,
-                            decoration: BoxDecoration(),
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            decoration: const BoxDecoration(),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
@@ -165,7 +159,8 @@ class _WorkOutPageWidgetState extends State<WorkOutPageWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment:
+                                        const AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       'WorkOut Plan',
                                       style: FlutterFlowTheme.of(context)
@@ -181,8 +176,8 @@ class _WorkOutPageWidgetState extends State<WorkOutPageWidget> {
                                     children: [
                                       Expanded(
                                         child: Align(
-                                          alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                          alignment: const AlignmentDirectional(
+                                              0.0, 0.0),
                                           child: Container(
                                             width: 200.0,
                                             child: TextFormField(
@@ -210,7 +205,7 @@ class _WorkOutPageWidgetState extends State<WorkOutPageWidget> {
                                                         ),
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 1.0,
                                                   ),
@@ -220,7 +215,7 @@ class _WorkOutPageWidgetState extends State<WorkOutPageWidget> {
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 1.0,
                                                   ),
@@ -279,29 +274,27 @@ class _WorkOutPageWidgetState extends State<WorkOutPageWidget> {
                                         ),
                                       ),
                                       FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
-                                        },
+                                        onPressed: () {},
                                         text: '',
-                                        icon: Icon(
+                                        icon: const Icon(
                                           Icons.calendar_month,
                                           size: 30.0,
                                         ),
                                         options: FFButtonOptions(
                                           height: 40.0,
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 16.0, 0.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(16.0, 0.0, 16.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: Color(0x004B39EF),
+                                              const EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                          color: const Color(0x004B39EF),
                                           textStyle:
                                               FlutterFlowTheme.of(context)
                                                   .titleSmall
                                                   .override(
                                                     fontFamily: 'Inter Tight',
-                                                    color: Color(0xFF0B0B0B),
+                                                    color:
+                                                        const Color(0xFF0B0B0B),
                                                     letterSpacing: 0.0,
                                                   ),
                                           elevation: 0.0,
@@ -312,7 +305,8 @@ class _WorkOutPageWidgetState extends State<WorkOutPageWidget> {
                                     ],
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment:
+                                        const AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       'Name Ejercice',
                                       textAlign: TextAlign.start,
@@ -365,29 +359,27 @@ class _WorkOutPageWidgetState extends State<WorkOutPageWidget> {
                                         ),
                                       ),
                                       FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
-                                        },
+                                        onPressed: () {},
                                         text: '',
-                                        icon: Icon(
+                                        icon: const Icon(
                                           Icons.navigate_next,
                                           size: 50.0,
                                         ),
                                         options: FFButtonOptions(
                                           height: 40.0,
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 16.0, 0.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(16.0, 0.0, 16.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: Color(0x004B39EF),
+                                              const EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                          color: const Color(0x004B39EF),
                                           textStyle:
                                               FlutterFlowTheme.of(context)
                                                   .titleSmall
                                                   .override(
                                                     fontFamily: 'Inter Tight',
-                                                    color: Color(0xFF0A0A0A),
+                                                    color:
+                                                        const Color(0xFF0A0A0A),
                                                     letterSpacing: 0.0,
                                                   ),
                                           elevation: 0.0,
@@ -411,24 +403,24 @@ class _WorkOutPageWidgetState extends State<WorkOutPageWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () {
-                          print('Button pressed ...');
+                          context.pushNamed('ObjectPage');
                         },
                         text: 'Menu',
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.menu,
                           size: 26.0,
                         ),
                         options: FFButtonOptions(
                           height: 40.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: Color(0x004B39EF),
+                          color: const Color(0x004B39EF),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Inter Tight',
-                                    color: Color(0xFF0F0F0F),
+                                    color: const Color(0xFF0F0F0F),
                                     fontSize: 20.0,
                                     letterSpacing: 0.0,
                                   ),
@@ -438,24 +430,24 @@ class _WorkOutPageWidgetState extends State<WorkOutPageWidget> {
                       ),
                       FFButtonWidget(
                         onPressed: () {
-                          print('Button pressed ...');
+                          context.pushNamed('FoodPlanPage');
                         },
                         text: 'Food Plan',
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.food_bank,
                           size: 36.0,
                         ),
                         options: FFButtonOptions(
                           height: 40.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: Color(0x004B39EF),
+                          color: const Color(0x004B39EF),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Inter Tight',
-                                    color: Color(0xFF0F0F0F),
+                                    color: const Color(0xFF0F0F0F),
                                     fontSize: 20.0,
                                     letterSpacing: 0.0,
                                   ),

@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'schema/util/firestore_util.dart';
 
-import 'schema/vitae_fitness_record.dart';
+import 'schema/user_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -12,40 +12,40 @@ export 'schema/index.dart';
 export 'schema/util/firestore_util.dart';
 export 'schema/util/schema_util.dart';
 
-export 'schema/vitae_fitness_record.dart';
+export 'schema/user_record.dart';
 
-/// Functions to query VitaeFitnessRecords (as a Stream and as a Future).
-Future<int> queryVitaeFitnessRecordCount({
+/// Functions to query UserRecords (as a Stream and as a Future).
+Future<int> queryUserRecordCount({
   Query Function(Query)? queryBuilder,
   int limit = -1,
 }) =>
     queryCollectionCount(
-      VitaeFitnessRecord.collection,
+      UserRecord.collection,
       queryBuilder: queryBuilder,
       limit: limit,
     );
 
-Stream<List<VitaeFitnessRecord>> queryVitaeFitnessRecord({
+Stream<List<UserRecord>> queryUserRecord({
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
     queryCollection(
-      VitaeFitnessRecord.collection,
-      VitaeFitnessRecord.fromSnapshot,
+      UserRecord.collection,
+      UserRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
     );
 
-Future<List<VitaeFitnessRecord>> queryVitaeFitnessRecordOnce({
+Future<List<UserRecord>> queryUserRecordOnce({
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
     queryCollectionOnce(
-      VitaeFitnessRecord.collection,
-      VitaeFitnessRecord.fromSnapshot,
+      UserRecord.collection,
+      UserRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

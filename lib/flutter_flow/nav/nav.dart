@@ -37,87 +37,87 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) => LoginPageWidget(),
+      errorBuilder: (context, state) => const LoginPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => LoginPageWidget(),
+          builder: (context, _) => const LoginPageWidget(),
         ),
         FFRoute(
           name: 'LoginPage',
           path: '/loginPage',
-          builder: (context, params) => LoginPageWidget(),
+          builder: (context, params) => const LoginPageWidget(),
         ),
         FFRoute(
           name: 'HomePage',
           path: '/homePage',
-          builder: (context, params) => HomePageWidget(),
+          builder: (context, params) => const HomePageWidget(),
         ),
         FFRoute(
           name: 'ObjectPage',
           path: '/objectPage',
-          builder: (context, params) => ObjectPageWidget(),
-        ),
-        FFRoute(
-          name: 'RegisterPage',
-          path: '/registerPage',
-          builder: (context, params) => RegisterPageWidget(),
+          builder: (context, params) => const ObjectPageWidget(),
         ),
         FFRoute(
           name: 'ObjectPageC',
           path: '/objectPageC',
-          builder: (context, params) => ObjectPageCWidget(),
+          builder: (context, params) => ObjectPageCWidget(
+            name: params.getParam(
+              'name',
+              ParamType.String,
+            ),
+          ),
         ),
         FFRoute(
           name: 'FoodPlanPage',
           path: '/foodPlanPage',
-          builder: (context, params) => FoodPlanPageWidget(),
+          builder: (context, params) => const FoodPlanPageWidget(),
         ),
         FFRoute(
           name: 'WorkOutPage',
           path: '/workOutPage',
-          builder: (context, params) => WorkOutPageWidget(),
+          builder: (context, params) => const WorkOutPageWidget(),
         ),
         FFRoute(
           name: 'AdminObjectPage',
           path: '/adminObjectPage',
-          builder: (context, params) => AdminObjectPageWidget(),
+          builder: (context, params) => const AdminObjectPageWidget(),
         ),
         FFRoute(
           name: 'AdminRoutinesPage',
           path: '/adminRoutinesPage',
-          builder: (context, params) => AdminRoutinesPageWidget(),
+          builder: (context, params) => const AdminRoutinesPageWidget(),
         ),
         FFRoute(
           name: 'AdminCustomPage',
           path: '/adminCustomPage',
-          builder: (context, params) => AdminCustomPageWidget(),
+          builder: (context, params) => const AdminCustomPageWidget(),
         ),
         FFRoute(
           name: 'AdminRegisterPage',
           path: '/adminRegisterPage',
-          builder: (context, params) => AdminRegisterPageWidget(),
+          builder: (context, params) => const AdminRegisterPageWidget(),
         ),
         FFRoute(
           name: 'AdminProgressPage',
           path: '/adminProgressPage',
-          builder: (context, params) => AdminProgressPageWidget(),
+          builder: (context, params) => const AdminProgressPageWidget(),
         ),
         FFRoute(
           name: 'PodiumPage',
           path: '/podiumPage',
-          builder: (context, params) => PodiumPageWidget(),
+          builder: (context, params) => const PodiumPageWidget(),
         ),
         FFRoute(
           name: 'AdminFoodPlanPage',
           path: '/adminFoodPlanPage',
-          builder: (context, params) => AdminFoodPlanPageWidget(),
+          builder: (context, params) => const AdminFoodPlanPageWidget(),
         ),
         FFRoute(
           name: 'RoutinesPage',
           path: '/routinesPage',
-          builder: (context, params) => RoutinesPageWidget(),
+          builder: (context, params) => const RoutinesPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -283,7 +283,8 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() =>
+      const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {
