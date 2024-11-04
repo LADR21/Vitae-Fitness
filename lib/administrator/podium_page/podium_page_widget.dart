@@ -194,7 +194,10 @@ class _PodiumPageWidgetState extends State<PodiumPageWidget> {
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               FFButtonWidget(
-                                onPressed: () {},
+                                onPressed: () {
+                                  context
+                                      .pushReplacementNamed('AdminObjectPage');
+                                },
                                 text: 'Accept',
                                 icon: const Icon(
                                   Icons.check_circle,

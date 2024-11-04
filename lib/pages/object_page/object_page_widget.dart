@@ -56,7 +56,7 @@ class _ObjectPageWidgetState extends State<ObjectPageWidget> {
                       children: [
                         FFButtonWidget(
                           onPressed: () async {
-                            context.pushNamed(
+                            context.pushReplacementNamed(
                               'User',
                               extra: <String, dynamic>{
                                 kTransitionInfoKey: const TransitionInfo(
@@ -186,153 +186,160 @@ class _ObjectPageWidgetState extends State<ObjectPageWidget> {
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Align(
-                          alignment: const AlignmentDirectional(0, 0),
-                          child: Container(
-                            width: 398,
-                            height: 348,
-                            decoration: const BoxDecoration(),
+                        Expanded(
+                          child: Align(
                             alignment: const AlignmentDirectional(0, 0),
-                            child: Align(
+                            child: Container(
+                              width: 398,
+                              height: 348,
+                              decoration: const BoxDecoration(),
                               alignment: const AlignmentDirectional(0, 0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  Align(
-                                    alignment: const AlignmentDirectional(0, 0),
-                                    child: Text(
-                                      'Vitae Fitness',
-                                      style: FlutterFlowTheme.of(context)
-                                          .displaySmall
-                                          .override(
-                                            fontFamily: 'Inter Tight',
-                                            letterSpacing: 0.0,
-                                          ),
+                              child: Align(
+                                alignment: const AlignmentDirectional(0, 0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
+                                  children: [
+                                    Align(
+                                      alignment:
+                                          const AlignmentDirectional(0, 0),
+                                      child: Text(
+                                        'Vitae Fitness',
+                                        style: FlutterFlowTheme.of(context)
+                                            .displaySmall
+                                            .override(
+                                              fontFamily: 'Inter Tight',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
                                     ),
-                                  ),
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(8),
-                                            child: Image.asset(
-                                              'assets/images/178114194-icono-de-fuego-de-kcal-para-quemar-grasa-de-energa-kilocalora-logotipo-caliente-vector-peso-removebg-preview.png',
-                                              width: 112,
-                                              height: 128,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
-                                          FFButtonWidget(
-                                            onPressed: () async {
-                                              context.pushNamed(
-                                                'ObjectPageC',
-                                                queryParameters: {
-                                                  'name': serializeParam(
-                                                    'Fat Burn',
-                                                    ParamType.String,
-                                                  ),
-                                                }.withoutNulls,
-                                                extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
-                                                      const TransitionInfo(
-                                                    hasTransition: true,
-                                                    transitionType:
-                                                        PageTransitionType.fade,
-                                                    duration: Duration(
-                                                        milliseconds: 0),
-                                                  ),
-                                                },
-                                              );
-                                            },
-                                            text: 'Fat Burn',
-                                            options: FFButtonOptions(
-                                              height: 40,
-                                              padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(16, 0, 16, 0),
-                                              iconPadding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 0, 0),
-                                              color: const Color(0x004B39EF),
-                                              textStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleSmall
-                                                  .override(
-                                                    fontFamily: 'Inter Tight',
-                                                    color:
-                                                        const Color(0xFF151313),
-                                                    letterSpacing: 0.0,
-                                                  ),
-                                              elevation: 0,
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(8),
+                                              child: Image.asset(
+                                                'assets/images/178114194-icono-de-fuego-de-kcal-para-quemar-grasa-de-energa-kilocalora-logotipo-caliente-vector-peso-removebg-preview.png',
+                                                width: 112,
+                                                height: 128,
+                                                fit: BoxFit.cover,
+                                              ),
                                             ),
-                                          ),
-                                        ],
-                                      ),
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(8),
-                                            child: Image.asset(
-                                              'assets/images/depositphotos_118961556-stock-illustration-muscular-arm-icon-removebg-preview.png',
-                                              width: 123,
-                                              height: 110,
-                                              fit: BoxFit.fill,
+                                            FFButtonWidget(
+                                              onPressed: () async {
+                                                context.pushReplacementNamed(
+                                                  'ObjectPageC',
+                                                  queryParameters: {
+                                                    'name': serializeParam(
+                                                      'Fat Burn',
+                                                      ParamType.String,
+                                                    ),
+                                                  }.withoutNulls,
+                                                  extra: <String, dynamic>{
+                                                    kTransitionInfoKey:
+                                                        const TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .fade,
+                                                      duration: Duration(
+                                                          milliseconds: 0),
+                                                    ),
+                                                  },
+                                                );
+                                              },
+                                              text: 'Fat Burn',
+                                              options: FFButtonOptions(
+                                                height: 40,
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(16, 0, 16, 0),
+                                                iconPadding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(0, 0, 0, 0),
+                                                color: const Color(0x004B39EF),
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Inter Tight',
+                                                          color: const Color(
+                                                              0xFF151313),
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                elevation: 0,
+                                                borderRadius:
+                                                    BorderRadius.circular(8),
+                                              ),
                                             ),
-                                          ),
-                                          FFButtonWidget(
-                                            onPressed: () async {
-                                              context.pushNamed(
-                                                'ObjectPageC',
-                                                queryParameters: {
-                                                  'name': serializeParam(
-                                                    'Muscle Gain',
-                                                    ParamType.String,
-                                                  ),
-                                                }.withoutNulls,
-                                              );
-                                            },
-                                            text: 'Muscle Gain',
-                                            options: FFButtonOptions(
-                                              height: 40,
-                                              padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(16, 0, 16, 0),
-                                              iconPadding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 0, 0),
-                                              color: const Color(0x064B39EF),
-                                              textStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleSmall
-                                                  .override(
-                                                    fontFamily: 'Inter Tight',
-                                                    color:
-                                                        const Color(0xFF090909),
-                                                    letterSpacing: 0.0,
-                                                  ),
-                                              elevation: 0,
+                                          ],
+                                        ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(8),
+                                              child: Image.asset(
+                                                'assets/images/depositphotos_118961556-stock-illustration-muscular-arm-icon-removebg-preview.png',
+                                                width: 123,
+                                                height: 110,
+                                                fit: BoxFit.fill,
+                                              ),
                                             ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                            FFButtonWidget(
+                                              onPressed: () async {
+                                                context.pushReplacementNamed(
+                                                  'ObjectPageC',
+                                                  queryParameters: {
+                                                    'name': serializeParam(
+                                                      'Muscle Gain',
+                                                      ParamType.String,
+                                                    ),
+                                                  }.withoutNulls,
+                                                );
+                                              },
+                                              text: 'Muscle Gain',
+                                              options: FFButtonOptions(
+                                                height: 40,
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(16, 0, 16, 0),
+                                                iconPadding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(0, 0, 0, 0),
+                                                color: const Color(0x064B39EF),
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Inter Tight',
+                                                          color: const Color(
+                                                              0xFF090909),
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                elevation: 0,
+                                                borderRadius:
+                                                    BorderRadius.circular(8),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -358,7 +365,7 @@ class _ObjectPageWidgetState extends State<ObjectPageWidget> {
                           ),
                           FFButtonWidget(
                             onPressed: () async {
-                              context.pushNamed(
+                              context.pushReplacementNamed(
                                 'ObjectPageC',
                                 queryParameters: {
                                   'name': serializeParam(

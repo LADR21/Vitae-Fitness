@@ -1,3 +1,5 @@
+// ignore: file_names
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 FirebaseFirestore db = FirebaseFirestore.instance;
@@ -17,6 +19,29 @@ void insertFoodDay(String date, String mael1, String mael2, String mael3,
 
   projectData
       .add(newFoodPlan)
+      .then((value) => {
+            print('Plan ingresado correctamente: $value'),
+          })
+      .catchError((error) {
+    print('Plan ingresado incorrectamente: $error');
+  });
+}
+
+void insertUser(
+    String name, String last, String street, int year, int height, int weight) {
+  CollectionReference projectData = db.collection('User');
+
+  Map<String, dynamic> newUser = {
+    'Name': name,
+    'Last Name': last,
+    'Street Address': street,
+    'Year Old': year,
+    'Height': height,
+    'Weight': weight,
+  };
+
+  projectData
+      .add(newUser)
       .then((value) => {
             print('Plan ingresado correctamente: $value'),
           })

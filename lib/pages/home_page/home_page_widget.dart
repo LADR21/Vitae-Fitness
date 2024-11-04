@@ -58,7 +58,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () async {
-                          context.pushNamed(
+                          context.pushReplacementNamed(
                             'User',
                             extra: <String, dynamic>{
                               kTransitionInfoKey: const TransitionInfo(
@@ -123,25 +123,29 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     ],
                   ),
                 ),
-                Align(
-                  alignment: const AlignmentDirectional(0, 0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Align(
-                        alignment: const AlignmentDirectional(0, 0),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: Image.asset(
-                            'assets/images/gy-removebg-preview.png',
-                            width: 227,
-                            height: 200,
-                            fit: BoxFit.cover,
+                Expanded(
+                  child: Align(
+                    alignment: const AlignmentDirectional(0, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Expanded(
+                          child: Align(
+                            alignment: const AlignmentDirectional(0, 0),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.asset(
+                                'assets/images/gy-removebg-preview.png',
+                                width: 227,
+                                height: 200,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
                 Align(
@@ -150,11 +154,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Align(
-                        alignment: const AlignmentDirectional(0, 0),
-                        child: Padding(
-                          padding:
-                              const EdgeInsetsDirectional.fromSTEB(0, 0, 40, 0),
+                      Expanded(
+                        child: Align(
                           child: Container(
                             width: 398,
                             height: 348,
@@ -180,21 +181,48 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           ),
                                     ),
                                   ),
-                                  Padding(
-                                    padding:
-                                        const EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 40, 0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                        FFButtonWidget(
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      FFButtonWidget(
+                                        onPressed: () {
+                                          context.pushReplacementNamed(
+                                              'AdminRegisterPage');
+                                        },
+                                        text: 'Register',
+                                        options: FFButtonOptions(
+                                          height: 40,
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(16, 0, 16, 0),
+                                          iconPadding:
+                                              const EdgeInsetsDirectional
+                                                  .fromSTEB(0, 0, 0, 0),
+                                          color: const Color(0x00FFFFFF),
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .titleSmall
+                                              .override(
+                                                fontFamily: 'Inter Tight',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                fontSize: 26,
+                                                letterSpacing: 0.0,
+                                              ),
+                                          elevation: 0,
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                        ),
+                                      ),
+                                      Flexible(
+                                        child: FFButtonWidget(
                                           onPressed: () {
-                                            context
-                                                .pushNamed('AdminRegisterPage');
+                                            context.pushReplacementNamed(
+                                                'ObjectPage');
                                           },
-                                          text: 'Register',
+                                          text: 'View',
                                           options: FFButtonOptions(
                                             height: 40,
                                             padding: const EdgeInsetsDirectional
@@ -202,7 +230,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             iconPadding:
                                                 const EdgeInsetsDirectional
                                                     .fromSTEB(0, 0, 0, 0),
-                                            color: const Color(0x00FFFFFF),
+                                            color: const Color(0x0000FFFF),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
@@ -211,7 +239,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .primary,
+                                                              .secondary,
                                                       fontSize: 26,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -220,72 +248,38 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 BorderRadius.circular(8),
                                           ),
                                         ),
-                                        Flexible(
-                                          child: FFButtonWidget(
-                                            onPressed: () {
-                                              context.pushNamed('ObjectPage');
-                                            },
-                                            text: 'View',
-                                            options: FFButtonOptions(
-                                              height: 40,
-                                              padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(16, 0, 16, 0),
-                                              iconPadding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 0, 0),
-                                              color: const Color(0x0000FFFF),
-                                              textStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleSmall
-                                                  .override(
-                                                    fontFamily: 'Inter Tight',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondary,
-                                                    fontSize: 26,
-                                                    letterSpacing: 0.0,
-                                                  ),
-                                              elevation: 0,
-                                              borderRadius:
-                                                  BorderRadius.circular(8),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
-                                  Padding(
-                                    padding:
-                                        const EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 40, 0),
-                                    child: FFButtonWidget(
-                                      onPressed: () {
-                                        context.pushNamed('ObjectPage');
-                                      },
-                                      text: 'Begin',
-                                      icon: const Icon(
-                                        Icons.not_started_sharp,
-                                        size: 30,
-                                      ),
-                                      options: FFButtonOptions(
-                                        height: 40,
-                                        padding: const EdgeInsetsDirectional
-                                            .fromSTEB(16, 0, 16, 0),
-                                        iconPadding: const EdgeInsetsDirectional
-                                            .fromSTEB(0, 0, 0, 0),
-                                        color: const Color(0x03FFFFFF),
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Inter Tight',
-                                              color: const Color(0xFF090909),
-                                              fontSize: 40,
-                                              letterSpacing: 0.0,
-                                            ),
-                                        elevation: 0,
-                                        borderRadius: BorderRadius.circular(8),
-                                      ),
+                                  FFButtonWidget(
+                                    onPressed: () {
+                                      context
+                                          .pushReplacementNamed('ObjectPage');
+                                    },
+                                    text: 'Begin',
+                                    icon: const Icon(
+                                      Icons.not_started_sharp,
+                                      size: 30,
+                                    ),
+                                    options: FFButtonOptions(
+                                      height: 40,
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              16, 0, 16, 0),
+                                      iconPadding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0, 0, 0, 0),
+                                      color: const Color(0x03FFFFFF),
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Inter Tight',
+                                            color: const Color(0xFF090909),
+                                            fontSize: 40,
+                                            letterSpacing: 0.0,
+                                          ),
+                                      elevation: 0,
+                                      borderRadius: BorderRadius.circular(8),
                                     ),
                                   ),
                                 ],

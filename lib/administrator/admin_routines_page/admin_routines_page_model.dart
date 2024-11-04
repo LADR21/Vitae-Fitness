@@ -1,3 +1,5 @@
+import 'package:working_planning/backend/schema/work_plan_record.dart';
+
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'admin_routines_page_widget.dart' show AdminRoutinesPageWidget;
@@ -17,10 +19,11 @@ class AdminRoutinesPageModel extends FlutterFlowModel<AdminRoutinesPageWidget> {
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
+
+  WorkPlanRecord? docID;
+  bool isDataUploading = false;
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
 
   @override
   void initState(BuildContext context) {}
@@ -32,8 +35,5 @@ class AdminRoutinesPageModel extends FlutterFlowModel<AdminRoutinesPageWidget> {
 
     textFieldFocusNode2?.dispose();
     textController2?.dispose();
-
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
   }
 }

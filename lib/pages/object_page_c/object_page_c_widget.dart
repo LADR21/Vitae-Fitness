@@ -142,29 +142,28 @@ class _ObjectPageCWidgetState extends State<ObjectPageCWidget> {
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
-                          child: Container(
-                            width: 398.0,
-                            height: 471.0,
-                            decoration: const BoxDecoration(),
-                            alignment: const AlignmentDirectional(0.0, 0.0),
-                            child: Align(
+                        Expanded(
+                          child: Align(
+                            alignment: const AlignmentDirectional(0, 0),
+                            child: Container(
+                              width: 398.0,
+                              height: 471.0,
+                              decoration: const BoxDecoration(),
                               alignment: const AlignmentDirectional(0.0, 0.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  Align(
-                                    alignment: const AlignmentDirectional(0, 0),
-                                    child: Padding(
-                                      padding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0, 0, 51, 0),
+                              child: Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
+                                  children: [
+                                    Align(
+                                      alignment:
+                                          const AlignmentDirectional(0, 0),
                                       child: Text(
-                                        widget.name.toString(),
+                                        widget.name!,
                                         style: FlutterFlowTheme.of(context)
                                             .displaySmall
                                             .override(
@@ -173,121 +172,125 @@ class _ObjectPageCWidgetState extends State<ObjectPageCWidget> {
                                             ),
                                       ),
                                     ),
-                                  ),
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                            child: Image.asset(
-                                              'assets/images/food-diary-line-icon-diet-plan-on-clipboard-with-fruits-linear-pictogram-planner-for-healthy-nutrition-outline-icon-meal-notes-concept-isolated-illustration-vector-removebg-preview.png',
-                                              width: 143.0,
-                                              height: 135.0,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
-                                          Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              FFButtonWidget(
-                                                onPressed: () {
-                                                  context.pushNamed(
-                                                      'FoodPlanPage');
-                                                },
-                                                text: 'Food Plan',
-                                                options: FFButtonOptions(
-                                                  height: 40,
-                                                  padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(
-                                                          16, 0, 16, 0),
-                                                  iconPadding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(0, 0, 0, 0),
-                                                  color:
-                                                      const Color(0x004B39EF),
-                                                  textStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .override(
-                                                            fontFamily:
-                                                                'Inter Tight',
-                                                            color: const Color(
-                                                                0xFF151313),
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                  elevation: 0,
-                                                  borderRadius:
-                                                      BorderRadius.circular(8),
-                                                ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                              child: Image.asset(
+                                                'assets/images/food-diary-line-icon-diet-plan-on-clipboard-with-fruits-linear-pictogram-planner-for-healthy-nutrition-outline-icon-meal-notes-concept-isolated-illustration-vector-removebg-preview.png',
+                                                width: 143.0,
+                                                height: 135.0,
+                                                fit: BoxFit.cover,
                                               ),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                            child: Image.asset(
-                                              'assets/images/429d631659a11a9eb666b103d811470a-removebg-preview.png',
-                                              width: 143.0,
-                                              height: 135.0,
-                                              fit: BoxFit.cover,
                                             ),
-                                          ),
-                                          Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              FFButtonWidget(
-                                                onPressed: () {
-                                                  context
-                                                      .pushNamed('WorkOutPage');
-                                                },
-                                                text: 'Work out',
-                                                options: FFButtonOptions(
-                                                  height: 40,
-                                                  padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(
-                                                          16, 0, 16, 0),
-                                                  iconPadding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(0, 0, 0, 0),
-                                                  color:
-                                                      const Color(0x004B39EF),
-                                                  textStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .override(
-                                                            fontFamily:
-                                                                'Inter Tight',
-                                                            color: const Color(
-                                                                0xFF151313),
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                  elevation: 0,
-                                                  borderRadius:
-                                                      BorderRadius.circular(8),
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                FFButtonWidget(
+                                                  onPressed: () {
+                                                    context
+                                                        .pushReplacementNamed(
+                                                            'FoodPlanPage');
+                                                  },
+                                                  text: 'Food Plan',
+                                                  options: FFButtonOptions(
+                                                    height: 40,
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                            16, 0, 16, 0),
+                                                    iconPadding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                            0, 0, 0, 0),
+                                                    color:
+                                                        const Color(0x004B39EF),
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Inter Tight',
+                                                          color: const Color(
+                                                              0xFF151313),
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                    elevation: 0,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8),
+                                                  ),
                                                 ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                              child: Image.asset(
+                                                'assets/images/429d631659a11a9eb666b103d811470a-removebg-preview.png',
+                                                width: 143.0,
+                                                height: 135.0,
+                                                fit: BoxFit.cover,
                                               ),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                            ),
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                FFButtonWidget(
+                                                  onPressed: () {
+                                                    context
+                                                        .pushReplacementNamed(
+                                                            'WorkOutPage');
+                                                  },
+                                                  text: 'Work out',
+                                                  options: FFButtonOptions(
+                                                    height: 40,
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                            16, 0, 16, 0),
+                                                    iconPadding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                            0, 0, 0, 0),
+                                                    color:
+                                                        const Color(0x004B39EF),
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Inter Tight',
+                                                          color: const Color(
+                                                              0xFF151313),
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                    elevation: 0,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -301,7 +304,7 @@ class _ObjectPageCWidgetState extends State<ObjectPageCWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () {
-                          context.pushNamed('ObjectPage');
+                          context.pushReplacementNamed('ObjectPage');
                         },
                         text: 'Menu',
                         icon: const Icon(
