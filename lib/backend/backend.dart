@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:working_planning/backend/schema/food_plan_record.dart';
 import 'package:working_planning/backend/schema/progress_record.dart';
@@ -127,6 +129,7 @@ Future<int> queryCollectionCount(
     query = query.limit(limit);
   }
 
+  // ignore: body_might_complete_normally_catch_error
   return query.count().get().catchError((err) {
     print('Error querying $collection: $err');
   }).then((value) => value.count!);
