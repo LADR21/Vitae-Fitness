@@ -9,8 +9,7 @@ class AdminRoutinesPageModel extends FlutterFlowModel<AdminRoutinesPageWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
+  DateTime? datePicked;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;

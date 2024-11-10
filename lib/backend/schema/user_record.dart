@@ -10,9 +10,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 
 class UserRecord extends FirestoreRecord {
   UserRecord._(
-    super.reference,
-    super.data,
-  ) {
+    DocumentReference reference,
+    Map<String, dynamic> data,
+  ) : super(reference, data) {
     _initializeFields();
   }
 
@@ -46,6 +46,11 @@ class UserRecord extends FirestoreRecord {
   String get streetAddress => _streetAddress ?? '';
   bool hasStreetAddress() => _streetAddress != null;
 
+  // "Membership" field.
+  String? _membership;
+  String get membership => _membership ?? '';
+  bool hasMembership() => _membership != null;
+
   void _initializeFields() {
     _name = snapshotData['Name'] as String?;
     _lastName = snapshotData['LastName'] as String?;
@@ -53,10 +58,11 @@ class UserRecord extends FirestoreRecord {
     _height = castToType<int>(snapshotData['Height']);
     _weight = castToType<int>(snapshotData['Weight']);
     _streetAddress = snapshotData['StreetAddress'] as String?;
+    _membership = snapshotData['Membership'] as String?;
   }
 
   static CollectionReference get collection =>
-      FirebaseFirestore.instance.collection('User');
+      FirebaseFirestore.instance.collection('user');
 
   static Stream<UserRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => UserRecord.fromSnapshot(s));
@@ -95,6 +101,7 @@ Map<String, dynamic> createUserRecordData({
   int? height,
   int? weight,
   String? streetAddress,
+  String? membership,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -104,6 +111,7 @@ Map<String, dynamic> createUserRecordData({
       'Height': height,
       'Weight': weight,
       'StreetAddress': streetAddress,
+      'Membership': membership,
     }.withoutNulls,
   );
 
@@ -120,7 +128,8 @@ class UserRecordDocumentEquality implements Equality<UserRecord> {
         e1?.yearOld == e2?.yearOld &&
         e1?.height == e2?.height &&
         e1?.weight == e2?.weight &&
-        e1?.streetAddress == e2?.streetAddress;
+        e1?.streetAddress == e2?.streetAddress &&
+        e1?.membership == e2?.membership;
   }
 
   @override
@@ -130,7 +139,8 @@ class UserRecordDocumentEquality implements Equality<UserRecord> {
         e?.yearOld,
         e?.height,
         e?.weight,
-        e?.streetAddress
+        e?.streetAddress,
+        e?.membership
       ]);
 
   @override

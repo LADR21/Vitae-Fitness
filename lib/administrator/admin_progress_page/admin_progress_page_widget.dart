@@ -201,7 +201,6 @@ class _AdminProgressPageWidgetState extends State<AdminProgressPageWidget> {
                                         StreamBuilder<List<UserRecord>>(
                                           stream: queryUserRecord(),
                                           builder: (context, snapshot) {
-                                            // Customize what your widget looks like when it's loading.
                                             if (!snapshot.hasData) {
                                               return Center(
                                                 child: SizedBox(
@@ -223,17 +222,18 @@ class _AdminProgressPageWidgetState extends State<AdminProgressPageWidget> {
                                             List<UserRecord>
                                                 dropDownUserRecordList =
                                                 snapshot.data!;
-
                                             return FlutterFlowDropDown<String>(
                                               controller: _model
                                                       .dropDownValueController ??=
                                                   FormFieldController<String>(
                                                       null),
-                                              options: const <String>[],
+                                              options: dropDownUserRecordList
+                                                  .map((e) => e.name)
+                                                  .toList(),
                                               onChanged: (val) => safeSetState(
                                                   () => _model.dropDownValue =
                                                       val),
-                                              width: 314,
+                                              width: 200,
                                               height: 40,
                                               textStyle:
                                                   FlutterFlowTheme.of(context)
@@ -243,7 +243,7 @@ class _AdminProgressPageWidgetState extends State<AdminProgressPageWidget> {
                                                             'Plus Jakarta Sans',
                                                         letterSpacing: 0.0,
                                                       ),
-                                              hintText: 'Select User...',
+                                              hintText: 'Select...',
                                               icon: Icon(
                                                 Icons
                                                     .keyboard_arrow_down_rounded,
@@ -480,7 +480,7 @@ class _AdminProgressPageWidgetState extends State<AdminProgressPageWidget> {
                         children: [
                           FFButtonWidget(
                             onPressed: () {
-                              context.pushReplacementNamed('AdminObjectPage');
+                              context.pushNamed('AdminObjectPage');
                             },
                             text: 'Menu',
                             icon: const Icon(
@@ -508,7 +508,7 @@ class _AdminProgressPageWidgetState extends State<AdminProgressPageWidget> {
                           ),
                           FFButtonWidget(
                             onPressed: () {
-                              context.pushReplacementNamed('PodiumPage');
+                              context.pushNamed('PodiumPage');
                             },
                             text: 'Podium',
                             icon: const FaIcon(

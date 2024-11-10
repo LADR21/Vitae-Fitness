@@ -195,8 +195,7 @@ class _PodiumPageWidgetState extends State<PodiumPageWidget> {
                             children: [
                               FFButtonWidget(
                                 onPressed: () {
-                                  context
-                                      .pushReplacementNamed('AdminObjectPage');
+                                  context.pushNamed('AdminObjectPage');
                                 },
                                 text: 'Accept',
                                 icon: const Icon(

@@ -1,9 +1,7 @@
 import 'package:working_planning/Firebase_Service/Insert_Data.dart';
-import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'admin_food_plan_page_model.dart';
 export 'admin_food_plan_page_model.dart';
@@ -205,49 +203,101 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                             ),
                                       ),
                                     ),
-                                    FlutterFlowDropDown<String>(
-                                      controller:
-                                          _model.dropDownValueController ??=
-                                              FormFieldController<String>(null),
-                                      options: const [
-                                        'Sunday',
-                                        'Monday',
-                                        'Tuesday',
-                                        'Wednesday',
-                                        'Thursday',
-                                        'Friday',
-                                        'Saturday'
-                                      ],
-                                      onChanged: (val) => safeSetState(
-                                          () => _model.dropDownValue = val),
-                                      width: 200.0,
-                                      height: 40.0,
-                                      textStyle: FlutterFlowTheme.of(context)
+                                    Text(
+                                      valueOrDefault<String>(
+                                        dateTimeFormat(
+                                            "MMMEd", _model.datePicked),
+                                        '20',
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Inter',
+                                            fontFamily: 'Plus Jakarta Sans',
+                                            fontSize: 20,
                                             letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w600,
                                           ),
-                                      hintText: 'Select Day...',
-                                      icon: Icon(
-                                        Icons.keyboard_arrow_down_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        size: 24.0,
+                                    ),
+                                    FFButtonWidget(
+                                      onPressed: () async {
+                                        final _datePickedDate =
+                                            await showDatePicker(
+                                          context: context,
+                                          initialDate: getCurrentTimestamp,
+                                          firstDate: getCurrentTimestamp,
+                                          lastDate: DateTime(2050),
+                                          builder: (context, child) {
+                                            return wrapInMaterialDatePickerTheme(
+                                              context,
+                                              child!,
+                                              headerBackgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              headerForegroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .info,
+                                              headerTextStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineLarge
+                                                      .override(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 32,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                      ),
+                                              pickerBackgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              pickerForegroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              selectedDateTimeBackgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              selectedDateTimeForegroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .info,
+                                              actionButtonForegroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              iconSize: 24,
+                                            );
+                                          },
+                                        );
+
+                                        if (_datePickedDate != null) {
+                                          safeSetState(() {
+                                            _model.datePicked = DateTime(
+                                              _datePickedDate.year,
+                                              _datePickedDate.month,
+                                              _datePickedDate.day,
+                                            );
+                                          });
+                                        }
+                                      },
+                                      text: '',
+                                      icon: const Icon(
+                                        Icons.calendar_month,
+                                        size: 30,
                                       ),
-                                      fillColor: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      elevation: 2.0,
-                                      borderColor: Colors.transparent,
-                                      borderWidth: 0.0,
-                                      borderRadius: 8.0,
-                                      margin:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              12.0, 0.0, 12.0, 0.0),
-                                      hidesUnderline: true,
-                                      isOverButton: false,
-                                      isSearchable: false,
-                                      isMultiSelect: false,
+                                      options: FFButtonOptions(
+                                        height: 40,
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(16, 0, 16, 0),
+                                        iconPadding: const EdgeInsetsDirectional
+                                            .fromSTEB(0, 0, 0, 0),
+                                        color: const Color(0x004B39EF),
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Plus Jakarta Sans',
+                                              color: const Color(0xFF0B0B0B),
+                                              letterSpacing: 0.0,
+                                            ),
+                                        elevation: 0,
+                                        borderRadius: BorderRadius.circular(8),
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -707,8 +757,7 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                     children: [
                                       FFButtonWidget(
                                         onPressed: () {
-                                          context.pushReplacementNamed(
-                                              'AdminObjectPage');
+                                          context.pushNamed('AdminObjectPage');
                                         },
                                         text: 'Menu',
                                         icon: const Icon(
@@ -740,7 +789,8 @@ class _AdminFoodPlanPageWidgetState extends State<AdminFoodPlanPageWidget> {
                                       FFButtonWidget(
                                         onPressed: () {
                                           insertFoodDay(
-                                              _model.dropDownValue.toString(),
+                                              dateTimeFormat(
+                                                  "MMMEd", _model.datePicked),
                                               _model.textController1.text,
                                               _model.textController2.text,
                                               _model.textController3.text,

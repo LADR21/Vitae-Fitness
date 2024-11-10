@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:working_planning/pages/User/user_widget.dart';
 
 import '/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -60,6 +61,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.String,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'User',
+          path: '/user',
+          builder: (context, params) => const UserWidget(),
         ),
         FFRoute(
           name: 'FoodPlanPage',

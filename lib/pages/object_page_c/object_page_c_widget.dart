@@ -59,7 +59,18 @@ class _ObjectPageCWidgetState extends State<ObjectPageCWidget> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         FFButtonWidget(
-                          onPressed: () {},
+                          onPressed: () {
+                            context.pushNamed(
+                              'User',
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: const TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
+                            );
+                          },
                           text: '',
                           icon: const Icon(
                             Icons.person,
@@ -195,9 +206,8 @@ class _ObjectPageCWidgetState extends State<ObjectPageCWidget> {
                                               children: [
                                                 FFButtonWidget(
                                                   onPressed: () {
-                                                    context
-                                                        .pushReplacementNamed(
-                                                            'FoodPlanPage');
+                                                    context.pushNamed(
+                                                        'FoodPlanPage');
                                                   },
                                                   text: 'Food Plan',
                                                   options: FFButtonOptions(
@@ -250,9 +260,8 @@ class _ObjectPageCWidgetState extends State<ObjectPageCWidget> {
                                               children: [
                                                 FFButtonWidget(
                                                   onPressed: () {
-                                                    context
-                                                        .pushReplacementNamed(
-                                                            'WorkOutPage');
+                                                    context.pushNamed(
+                                                        'WorkOutPage');
                                                   },
                                                   text: 'Work out',
                                                   options: FFButtonOptions(
@@ -304,7 +313,7 @@ class _ObjectPageCWidgetState extends State<ObjectPageCWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () {
-                          context.pushReplacementNamed('ObjectPage');
+                          context.pushNamed('ObjectPage');
                         },
                         text: 'Menu',
                         icon: const Icon(

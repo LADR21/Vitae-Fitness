@@ -56,7 +56,7 @@ class _ObjectPageWidgetState extends State<ObjectPageWidget> {
                       children: [
                         FFButtonWidget(
                           onPressed: () async {
-                            context.pushReplacementNamed(
+                            context.pushNamed(
                               'User',
                               extra: <String, dynamic>{
                                 kTransitionInfoKey: const TransitionInfo(
@@ -236,7 +236,7 @@ class _ObjectPageWidgetState extends State<ObjectPageWidget> {
                                             ),
                                             FFButtonWidget(
                                               onPressed: () async {
-                                                context.pushReplacementNamed(
+                                                context.pushNamed(
                                                   'ObjectPageC',
                                                   queryParameters: {
                                                     'name': serializeParam(
@@ -299,7 +299,7 @@ class _ObjectPageWidgetState extends State<ObjectPageWidget> {
                                             ),
                                             FFButtonWidget(
                                               onPressed: () async {
-                                                context.pushReplacementNamed(
+                                                context.pushNamed(
                                                   'ObjectPageC',
                                                   queryParameters: {
                                                     'name': serializeParam(
@@ -365,7 +365,7 @@ class _ObjectPageWidgetState extends State<ObjectPageWidget> {
                           ),
                           FFButtonWidget(
                             onPressed: () async {
-                              context.pushReplacementNamed(
+                              context.pushNamed(
                                 'ObjectPageC',
                                 queryParameters: {
                                   'name': serializeParam(

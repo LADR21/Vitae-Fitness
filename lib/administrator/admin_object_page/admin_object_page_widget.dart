@@ -189,7 +189,7 @@ class _AdminObjectPageWidgetState extends State<AdminObjectPageWidget> {
                                             ),
                                             FFButtonWidget(
                                               onPressed: () {
-                                                context.pushReplacementNamed(
+                                                context.pushNamed(
                                                     'AdminRoutinesPage');
                                               },
                                               text: 'Routines',
@@ -237,7 +237,7 @@ class _AdminObjectPageWidgetState extends State<AdminObjectPageWidget> {
                                               children: [
                                                 FFButtonWidget(
                                                   onPressed: () {
-                                                    context.pushReplacementNamed(
+                                                    context.pushNamed(
                                                         'AdminProgressPage');
                                                   },
                                                   text: 'Progress',
@@ -295,7 +295,7 @@ class _AdminObjectPageWidgetState extends State<AdminObjectPageWidget> {
                                             ),
                                             FFButtonWidget(
                                               onPressed: () {
-                                                context.pushReplacementNamed(
+                                                context.pushNamed(
                                                     'AdminFoodPlanPage');
                                               },
                                               text: 'Food Plan',
@@ -340,7 +340,7 @@ class _AdminObjectPageWidgetState extends State<AdminObjectPageWidget> {
                                             ),
                                             FFButtonWidget(
                                               onPressed: () {
-                                                context.pushReplacementNamed(
+                                                context.pushNamed(
                                                     'AdminCustomPage');
                                               },
                                               text: 'Customized',

@@ -1,5 +1,4 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/form_field_controller.dart';
 import 'admin_food_plan_page_widget.dart' show AdminFoodPlanPageWidget;
 import 'package:flutter/material.dart';
 
@@ -7,8 +6,7 @@ class AdminFoodPlanPageModel extends FlutterFlowModel<AdminFoodPlanPageWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
+  DateTime? datePicked;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;

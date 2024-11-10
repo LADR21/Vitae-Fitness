@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:working_planning/backend/schema/food_plan_record.dart';
 import 'package:working_planning/backend/schema/progress_record.dart';
 import 'package:working_planning/backend/schema/work_plan_record.dart';
 
@@ -157,6 +158,41 @@ Stream<List<T>> queryCollection<T>(
       .toList());
 }
 
+Future<int> queryFoodPlanRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      FoodPlanRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<FoodPlanRecord>> queryFoodPlanRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      FoodPlanRecord.collection,
+      FoodPlanRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<FoodPlanRecord>> queryFoodPlanRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      FoodPlanRecord.collection,
+      FoodPlanRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
 Future<List<T>> queryCollectionOnce<T>(
   Query collection,
   RecordBuilder<T> recordBuilder, {

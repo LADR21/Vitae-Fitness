@@ -58,7 +58,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () async {
-                          context.pushReplacementNamed(
+                          context.pushNamed(
                             'User',
                             extra: <String, dynamic>{
                               kTransitionInfoKey: const TransitionInfo(
@@ -188,8 +188,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     children: [
                                       FFButtonWidget(
                                         onPressed: () {
-                                          context.pushReplacementNamed(
-                                              'AdminRegisterPage');
+                                          context
+                                              .pushNamed('AdminRegisterPage');
                                         },
                                         text: 'Register',
                                         options: FFButtonOptions(
@@ -219,8 +219,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       Flexible(
                                         child: FFButtonWidget(
                                           onPressed: () {
-                                            context.pushReplacementNamed(
-                                                'ObjectPage');
+                                            context.pushNamed('ObjectPage');
                                           },
                                           text: 'View',
                                           options: FFButtonOptions(
@@ -253,8 +252,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   ),
                                   FFButtonWidget(
                                     onPressed: () {
-                                      context
-                                          .pushReplacementNamed('ObjectPage');
+                                      context.pushNamed('ObjectPage');
                                     },
                                     text: 'Begin',
                                     icon: const Icon(
