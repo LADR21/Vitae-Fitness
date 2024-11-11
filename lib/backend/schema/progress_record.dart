@@ -41,12 +41,18 @@ class ProgressRecord extends FirestoreRecord {
   String get force => _force ?? '';
   bool hasForce() => _force != null;
 
+  // "Height" field.
+  int? _height;
+  int get height => _height ?? 0;
+  bool hasHeight() => _height != null;
+
   void _initializeFields() {
     _user = snapshotData['User'] as String?;
     _mounth = snapshotData['Mounth'] as String?;
     _weight = snapshotData['Weight'] as String?;
     _fat = snapshotData['Fat'] as String?;
     _force = snapshotData['Force'] as String?;
+    _height = castToType<int>(snapshotData['Height']);
   }
 
   static CollectionReference get collection =>
@@ -89,6 +95,7 @@ Map<String, dynamic> createProgressRecordData({
   String? weight,
   String? fat,
   String? force,
+  int? height,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -97,6 +104,7 @@ Map<String, dynamic> createProgressRecordData({
       'Weight': weight,
       'Fat': fat,
       'Force': force,
+      'Height': height,
     }.withoutNulls,
   );
 
@@ -112,12 +120,13 @@ class ProgressRecordDocumentEquality implements Equality<ProgressRecord> {
         e1?.mounth == e2?.mounth &&
         e1?.weight == e2?.weight &&
         e1?.fat == e2?.fat &&
-        e1?.force == e2?.force;
+        e1?.force == e2?.force &&
+        e1?.height == e2?.height;
   }
 
   @override
   int hash(ProgressRecord? e) => const ListEquality()
-      .hash([e?.user, e?.mounth, e?.weight, e?.fat, e?.force]);
+      .hash([e?.user, e?.mounth, e?.weight, e?.fat, e?.force, e?.height]);
 
   @override
   bool isValidKey(Object? o) => o is ProgressRecord;

@@ -348,7 +348,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 ),
                                 FFButtonWidget(
                                   onPressed: () async {
-                                    context.pushNamed('HomePage');
+                                    context.pushNamed('ObjectPageC');
                                   },
                                   text: 'Login',
                                   options: FFButtonOptions(
