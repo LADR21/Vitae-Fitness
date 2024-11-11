@@ -28,17 +28,11 @@ class _UserWidgetState extends State<UserWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => UserModel());
-
     _model.textFieldFocusNode1 ??= FocusNode();
-
     _model.textFieldFocusNode2 ??= FocusNode();
-
     _model.textFieldFocusNode3 ??= FocusNode();
-
     _model.textFieldFocusNode4 ??= FocusNode();
-
     _model.textFieldFocusNode5 ??= FocusNode();
-
     _model.textFieldFocusNode6 ??= FocusNode();
   }
 
@@ -208,6 +202,7 @@ class _UserWidgetState extends State<UserWidget> {
                                   ),
                                   focusNode: _model.textFieldFocusNode1,
                                   autofocus: false,
+                                  readOnly: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     isDense: true,
@@ -273,6 +268,7 @@ class _UserWidgetState extends State<UserWidget> {
                                   ),
                                   focusNode: _model.textFieldFocusNode2,
                                   autofocus: false,
+                                  readOnly: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     isDense: false,
@@ -339,6 +335,7 @@ class _UserWidgetState extends State<UserWidget> {
                                   ),
                                   focusNode: _model.textFieldFocusNode3,
                                   autofocus: false,
+                                  readOnly: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     isDense: false,
@@ -405,6 +402,7 @@ class _UserWidgetState extends State<UserWidget> {
                                   ),
                                   focusNode: _model.textFieldFocusNode4,
                                   autofocus: false,
+                                  readOnly: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     isDense: false,
@@ -472,6 +470,7 @@ class _UserWidgetState extends State<UserWidget> {
                                   ),
                                   focusNode: _model.textFieldFocusNode5,
                                   autofocus: false,
+                                  readOnly: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     isDense: true,
@@ -541,6 +540,7 @@ class _UserWidgetState extends State<UserWidget> {
                                   ),
                                   focusNode: _model.textFieldFocusNode6,
                                   autofocus: false,
+                                  readOnly: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     isDense: true,

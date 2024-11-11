@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_import
+
 import 'dart:async';
 
 import 'package:collection/collection.dart';
@@ -53,16 +55,16 @@ class UserRecord extends FirestoreRecord {
 
   void _initializeFields() {
     _name = snapshotData['Name'] as String?;
-    _lastName = snapshotData['LastName'] as String?;
-    _yearOld = castToType<int>(snapshotData['YearOld']);
+    _lastName = snapshotData['Last Name'] as String?;
+    _yearOld = castToType<int>(snapshotData['Year Old']);
     _height = castToType<int>(snapshotData['Height']);
     _weight = castToType<int>(snapshotData['Weight']);
-    _streetAddress = snapshotData['StreetAddress'] as String?;
+    _streetAddress = snapshotData['Street Address'] as String?;
     _membership = snapshotData['Membership'] as String?;
   }
 
   static CollectionReference get collection =>
-      FirebaseFirestore.instance.collection('user');
+      FirebaseFirestore.instance.collection('User');
 
   static Stream<UserRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => UserRecord.fromSnapshot(s));

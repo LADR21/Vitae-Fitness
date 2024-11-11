@@ -18,7 +18,7 @@ void main() async {
 
   runApp(
     ChangeNotifierProvider(
-      create: (context) => UserModel(), // Proveer el modelo de usuario
+      create: (context) => UserModelProvider(), // Proveer el modelo de usuario
       child: const MyApp(),
     ),
   );
@@ -79,11 +79,9 @@ class MyAppState extends State<MyApp> {
   }
 }
 
-class UserModel extends ChangeNotifier {
+class UserModelProvider extends ChangeNotifier {
   String _name = '';
-
   String get name => _name;
-
   void updateUser(String name) {
     _name = name;
     notifyListeners(); // Notifica a los oyentes sobre el cambio
