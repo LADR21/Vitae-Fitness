@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1015398982385",
+    "project_id": "vitaefitness-5013f",
+    "storage_bucket": "vitaefitness-5013f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015398982385:android:2f4bfbb7209f5945ac7f50",
+        "android_client_info": {
+          "package_name": "com.VitaeFitness"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8UVj5dIZ42TbR4GXjxihjWUYKjPqkheI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015398982385:android:4d4f9d4496f1599dac7f50",
+        "android_client_info": {
+          "package_name": "com.vitaefitness"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8UVj5dIZ42TbR4GXjxihjWUYKjPqkheI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
