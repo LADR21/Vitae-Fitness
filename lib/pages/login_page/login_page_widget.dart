@@ -3,6 +3,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
 import 'login_page_model.dart';
 export 'login_page_model.dart';
 
@@ -23,11 +26,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
     super.initState();
     _model = createModel(context, () => LoginPageModel());
 
-    _model.textController1 ??=
-        TextEditingController(text: 'example@example.com');
+    _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController(text: '*********');
+    _model.textController2 ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -62,7 +64,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                     Align(
                       alignment: const AlignmentDirectional(1, 0),
                       child: FFButtonWidget(
-                        onPressed: () {},
+                        onPressed: () {
+                          print('Button pressed ...');
+                        },
                         text: '',
                         icon: const Icon(
                           Icons.question_mark,
@@ -147,7 +151,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 Align(
                                   alignment: const AlignmentDirectional(0, -1),
                                   child: Text(
-                                    'Email',
+                                    'User',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -157,7 +161,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         ),
                                   ),
                                 ),
-                                SizedBox(
+                                Container(
                                   width: 200,
                                   child: TextFormField(
                                     controller: _model.textController1,
@@ -172,13 +176,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                             fontFamily: 'Inter',
                                             letterSpacing: 0.0,
                                           ),
-                                      hintText: 'TextField',
-                                      hintStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            letterSpacing: 0.0,
-                                          ),
+                                      hintText: 'User Name',
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: const BorderSide(
                                           color: Color(0x00000000),
@@ -211,7 +209,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       ),
                                       filled: true,
                                       fillColor: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                          .primaryBackground,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -239,7 +237,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         ),
                                   ),
                                 ),
-                                SizedBox(
+                                Container(
                                   width: 200,
                                   child: TextFormField(
                                     controller: _model.textController2,
@@ -254,13 +252,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                             fontFamily: 'Inter',
                                             letterSpacing: 0.0,
                                           ),
-                                      hintText: 'TextField',
-                                      hintStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            letterSpacing: 0.0,
-                                          ),
+                                      hintText: 'User Password ',
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide: const BorderSide(
                                           color: Color(0x00000000),
@@ -293,7 +285,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       ),
                                       filled: true,
                                       fillColor: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                          .primaryBackground,
                                       suffixIcon: InkWell(
                                         onTap: () => safeSetState(
                                           () => _model.passwordVisibility =
@@ -315,7 +307,6 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           fontFamily: 'Inter',
                                           letterSpacing: 0.0,
                                         ),
-                                    textAlign: TextAlign.center,
                                     cursorColor: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     validator: _model.textController2Validator
@@ -323,7 +314,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                   ),
                                 ),
                                 FFButtonWidget(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    print('Button pressed ...');
+                                  },
                                   text: 'Forgot your password?',
                                   options: FFButtonOptions(
                                     height: 40,
@@ -348,7 +341,21 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 ),
                                 FFButtonWidget(
                                   onPressed: () async {
-                                    context.pushNamed('ObjectPageC');
+                                    if (_model.textController1.text != "" &&
+                                        _model.textController2.text != "") {
+                                      if (_model.textController1.text ==
+                                          "Lorenzo") {
+                                        context.pushNamed('HomePage');
+                                      } else {
+                                        context.pushNamed('AdminObjectPage');
+                                      }
+                                    } else {
+                                      const AlertDialog(
+                                        title: Text("Authentication"),
+                                        content: Text(
+                                            "The fields were not entered correctly"),
+                                      );
+                                    }
                                   },
                                   text: 'Login',
                                   options: FFButtonOptions(
@@ -398,7 +405,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                           ),
                           alignment: const AlignmentDirectional(0, 0),
                           child: FFButtonWidget(
-                            onPressed: () {},
+                            onPressed: () {
+                              print('Button pressed ...');
+                            },
                             text: 'Continue with Gmail',
                             icon: const FaIcon(
                               FontAwesomeIcons.google,
@@ -443,7 +452,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                           height: 55,
                           decoration: const BoxDecoration(),
                           child: FFButtonWidget(
-                            onPressed: () {},
+                            onPressed: () {
+                              print('Button pressed ...');
+                            },
                             text: 'Continue with Email',
                             icon: const Icon(
                               Icons.email,
